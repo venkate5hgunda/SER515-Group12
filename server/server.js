@@ -15,7 +15,7 @@ connection.once("open", () => {
     console.log("MongoDB connection established successfully");
 });
 
-app.use(express.static(`${__dirname}/client/build`));
+app.use(express.static(`${__dirname}/../client/build`));
 app.get("/health", (req,res) => {
     res.send({
         health: "UP"
@@ -23,7 +23,7 @@ app.get("/health", (req,res) => {
 });
 
 app.get("/*", function(req,res) {
-    res.sendFile(`${__dirname}/client/build/index.html`, function(err) {
+    res.sendFile(`${__dirname}/../client/build/index.html`, function(err) {
         if(err) {
             res.status(500).send(err);
         }
