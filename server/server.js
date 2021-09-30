@@ -15,7 +15,7 @@ connection.once("open", () => {
     console.log("MongoDB connection established successfully");
 });
 
-console.log(`${__dirname}/../client/build`);
+
 app.use(express.static(`${__dirname}/../client/build`)); // re-direct client side routes to react
 require('./routes/routes')(app); // routes have been moved to routes.js file
 

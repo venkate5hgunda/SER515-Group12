@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Switch, Route}  from 'react-router-dom';
 import Home from './pages/Home/Home';
+import Footer from './components/Footer/Footer'
 
 // TODO: Auto Build React when Node Starts
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
         </Switch>
+        <Footer />
       </Router>
     </> 
   );
