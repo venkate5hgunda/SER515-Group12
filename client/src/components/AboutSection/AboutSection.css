@@ -1,0 +1,16 @@
+.about-container > p {
+  font-size: 30px;
+  text-align: center;
+}
+
+.about-container > pre {
+  text-align: center;
+}
+
+.about-container > h3 {
+  text-align: center;
+}
+
+.about-container > h4 {
+  text-align: center;
+}
