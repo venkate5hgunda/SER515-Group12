@@ -7,7 +7,6 @@ function generateToken(role,user) {
 }
 
 function validateToken(role,user,expHash) {
-    let tokenGenStr = `${role} ${user.repeat(role.length)}`;
     let valHash = generateToken(role,user);
     return expHash==valHash; // Need to check. valHash might not be a string, === is returning FALSE
 }
