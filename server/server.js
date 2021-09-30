@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5001;
+const routes = require('./routes/routes');
+
 app.use(cors());
 app.use(express.json());
 
@@ -16,7 +18,7 @@ connection.once("open", () => {
 });
 
 app.use(express.static(`${__dirname}/../client/build`)); // re-direct client side routes to react
-require('./routes/routes')(app); // routes have been moved to routes.js file
+app.use('/',routes); // routes have been moved to routes.js file
 
 // start the MERN app
 app.listen(port, () => {
