@@ -14,7 +14,7 @@ router.get("/verify-token", (req,res) => {
 
 // ROLE ACCESS VERIFICATION ROUTES
 router.post("/create-page-access", (req,res) => {
-    res.send(pageAccessForRoles.addPageWithAccessInfo(req.body));
+    res.send(pageAccessForRoles.addPageAccessInfo(req.body));
 });
 
 router.get("/health", (req,res) => {
