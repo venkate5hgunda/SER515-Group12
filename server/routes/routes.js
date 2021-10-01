@@ -13,8 +13,11 @@ router.get("/verify-token", (req,res) => {
 });
 
 // ROLE ACCESS VERIFICATION ROUTES
-router.post("/create-page-access", (req,res) => {
-    res.send(pageAccessForRoles.addPageAccessInfo(req.body));
+router.post("/upsert-page-access", (req,res) => {
+    res.send(pageAccessForRoles.upsertPageAccessInfo(req.body));
+});
+router.post("/remove-page-access", (req,res) => {
+    res.send(pageAccessForRoles.removePageAccessInfo(req.body));
 });
 
 router.get("/health", (req,res) => {

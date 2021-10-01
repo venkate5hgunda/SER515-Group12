@@ -1,7 +1,8 @@
 const pageAccessForRoles = require('../models/page-access-for-roles-model');
 
 // pageInfo: { pageName: string, rolesWithAccess: string[] }
-async function addPageAccessInfo(pageInfo) {
+// INSERT/UPDATE PAGE ACCESS INFORMATION
+async function upsertPageAccessInfo(pageInfo) {
     try {
         let response = await pageAccessForRoles.find({pageName: pageInfo.pageName});
         if(response && response.length>0) {
@@ -25,4 +26,12 @@ async function addPageAccessInfo(pageInfo) {
     }
 }
 
-module.exports = {addPageAccessInfo: addPageAccessInfo};
+// REMOVE PAGE ACCESS INFORMATION, AND PAGE IF ROLES ARRAY IS EMPTY
+async function removePageAccessInfo(pageInfo) {
+
+}
+
+module.exports = {
+    upsertPageAccessInfo: upsertPageAccessInfo,
+    removePageAccessInfo: removePageAccessInfo
+};
