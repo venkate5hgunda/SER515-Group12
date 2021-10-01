@@ -7,7 +7,7 @@ async function upsertPageAccessInfo(pageInfo) {
         let response = await pageAccessForRoles.find({pageName: pageInfo.pageName});
         if(response && response.length>0) {
             response = await pageAccessForRoles.updateOne(
-                {'pageInfo': {'$eq': pageInfo.pageName }},
+                {'pageName': {'$eq': pageInfo.pageName }},
                 {'$addToSet': {'rolesWithAccess': { '$each': pageInfo.rolesWithAccess }}}
             );
         }
@@ -16,9 +16,11 @@ async function upsertPageAccessInfo(pageInfo) {
                 pageName: pageInfo.pageName,
                 rolesWithAccess: pageInfo.rolesWithAccess
             });
-            result = newPage.save();          
+            response = newPage.save(function(error, data) {
+                if(error) return error;
+                else return data;
+            });          
         }
-        console.log(response);
         return response;
     }
     catch(error) {
@@ -28,7 +30,22 @@ async function upsertPageAccessInfo(pageInfo) {
 
 // REMOVE PAGE ACCESS INFORMATION, AND PAGE IF ROLES ARRAY IS EMPTY
 async function removePageAccessInfo(pageInfo) {
-
+    try {
+        let response = await pageAccessForRoles.find({pageName: pageInfo.pageName});
+        if(response && response.length>0) {
+            response = await pageAccessForRoles.updateOne(
+                {'pageName': pageInfo.pageName },
+                {'$pull': {'rolesWithAccess': {'$in': pageInfo.rolesWithAccess }}}
+            );
+        }
+        else {
+            return {'message': `The page '${pageInfo.pageName}' not present in the Database`};
+        }
+        return response;
+    }
+    catch(error) {
+        return error;
+    }
 }
 
 module.exports = {

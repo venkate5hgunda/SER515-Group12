@@ -13,16 +13,22 @@ router.get("/verify-token", (req,res) => {
 });
 
 // ROLE ACCESS VERIFICATION ROUTES
-router.post("/upsert-page-access", (req,res) => {
-    res.send(pageAccessForRoles.upsertPageAccessInfo(req.body));
+router.post("/upsert-page-access", async (req,res) => {
+    let response = await pageAccessForRoles.upsertPageAccessInfo(req.body);
+    res.json(response);
 });
-router.post("/remove-page-access", (req,res) => {
-    res.send(pageAccessForRoles.removePageAccessInfo(req.body));
+router.post("/remove-page-access", async (req,res) => {
+    let response = await pageAccessForRoles.removePageAccessInfo(req.body);
+    res.json(response);
 });
 
 router.get("/health", (req,res) => {
-    res.send(appIndex.getIndexPage());
+    res.send(appIndex.healthInformation());
 });
+// USED FOR UNIT TESTING
+// router.get("/health", (req,res) => {
+//     res.send(appIndex.getIndexPage());
+// });
 
 router.get("/*", function(req,res) {
     res.sendFile(`${__dirname}/../client/build/index.html`, function(err) {
