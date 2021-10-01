@@ -7,8 +7,7 @@ async function verifyPageAccessInfo(pageInfo) {
             return false;
         }
         else {
-            console.log(response);
-            if(response[0].rolesWithAccess.indexOf(pageInfo.role)>-1) return true;
+            if(response.shift().rolesWithAccess.indexOf(pageInfo.role)>-1) return true;
             else return false;
         }
     }
