@@ -3,6 +3,7 @@ const path = require('path');
 var router = require('express').Router();
 
 const appIndex = require('../controllers/app.controller');
+const baseScheduleController = require('../controllers/base-schedule.controller');
 const tokenGenerator = require('../controllers/token-generator.controller');
 const pageAccessForRoles = require('../controllers/page-access-for-roles.controller');
 
@@ -35,6 +36,10 @@ router.get("/api/health", (req,res) => {
 // router.get("/health", (req,res) => {
 //     res.send(appIndex.getIndexPage());
 // });
+router.get("/api/baseschedule", (req,res) => {
+    res.send(baseScheduleController.baseSchedule())
+
+});
 
 // app.use(express.static(`${__dirname}/../client/build/`));
 router.get("/*", function(req,res) {
