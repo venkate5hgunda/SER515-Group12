@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require('path');
+
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5001;
+const routes = require('./routes/routes');
+
 app.use(cors());
 app.use(express.json());
 
@@ -15,8 +19,8 @@ connection.once("open", () => {
     console.log("MongoDB connection established successfully");
 });
 
-app.use(express.static(`${__dirname}/../client/build`)); // re-direct client side routes to react
-require('./routes/routes')(app); // routes have been moved to routes.js file
+app.use('/static', express.static(path.join(__dirname,'../client/build/static'))); // Route for react static assets
+app.use('/',routes); // routes are in routes.js file
 
 // start the MERN app
 app.listen(port, () => {

@@ -4,7 +4,8 @@
   "description": "A Soccer Tournament Website (Coursework Project for SER515)",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "build-react": "cd client && npm run-script build && cd ..",
+    "start": "npm run build-react && node server/server.js",
     "test": "mocha test/**/*.*"
   },
   "repository": {

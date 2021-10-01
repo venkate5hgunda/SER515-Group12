@@ -104,3 +104,6 @@ dist
 
 # MacOS Files
 .DS_Store
+
+# Package-Lock Ignore
+package-lock.json
