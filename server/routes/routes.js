@@ -1,27 +1,45 @@
+const path = require('path');
+
+var router = require('express').Router();
+
 const appIndex = require('../controllers/app.controller');
 const tokenGenerator = require('../controllers/token-generator.controller');
+const pageAccessForRoles = require('../controllers/page-access-for-roles.controller');
 
-module.exports = function(app) {
-    app.get("/health", (req,res) => {
-        // res.send({
-        //     health: "UP"
-        // });
-        res.send(appIndex.getIndexPage());
+// CRYPTO CONTROLLER ROUTES
+router.get("/api/get-token", (req,res) => {
+    res.send(tokenGenerator.generateToken(req.query.role,req.query.user));
+});
+router.get("/api/verify-token", (req,res) => {
+    res.send(tokenGenerator.validateToken(req.query.role,req.query.user,req.query.token));
+});
+
+// ROLE ACCESS VERIFICATION ROUTES
+router.post("/api/upsert-page-access", async (req,res) => {
+    let response = await pageAccessForRoles.upsertPageAccessInfo(req.body);
+    res.json(response);
+});
+router.post("/api/remove-page-access", async (req,res) => {
+    let response = await pageAccessForRoles.removePageAccessInfo(req.body);
+    res.json(response);
+});
+
+router.get("/api/health", (req,res) => {
+    res.send(appIndex.healthInformation());
+});
+// USED FOR UNIT TESTING
+// router.get("/health", (req,res) => {
+//     res.send(appIndex.getIndexPage());
+// });
+
+// app.use(express.static(`${__dirname}/../client/build/`));
+router.get("/*", function(req,res) {
+    res.sendFile('index.html',{root: path.join(__dirname,'../../client/build')}, function(err) {
+        if(err) {
+            console.log(err);
+            res.status(500).send(err);
+        }
     });
-    // Crypto Generation Route
-    app.get("/gettoken", (req,res) => {
-        res.send(tokenGenerator.generateToken(req.query.role,req.query.user));
-    });
-    
-    app.get("/verifytoken", (req,res) => {
-        res.send(tokenGenerator.validateToken(req.query.role,req.query.user,req.query.token));
-    });
-    
-    app.get("/*", function(req,res) {
-        res.sendFile(`${__dirname}/../client/build/index.html`, function(err) {
-            if(err) {
-                res.status(500).send(err);
-            }
-        });
-    });
-}
+});
+
+module.exports = router;
