@@ -14,12 +14,16 @@ router.get("/api/verify-token", (req,res) => {
     res.send(tokenGenerator.validateToken(req.query.role,req.query.user,req.query.token));
 });
 
-// ROLE ACCESS VERIFICATION ROUTES
-router.post("/api/upsert-page-access", async (req,res) => {
+// PAGE ACCESS VERIFICATION ROUTES
+router.get("/api/verify-page-access", async (req,res) => { // READ
+    let response = await pageAccessForRoles.verifyPageAccessInfo(req.query); // Need pageName and role params
+    res.json(response);
+});
+router.post("/api/upsert-page-access", async (req,res) => { // CREATE, UPDATE
     let response = await pageAccessForRoles.upsertPageAccessInfo(req.body);
     res.json(response);
 });
-router.post("/api/remove-page-access", async (req,res) => {
+router.post("/api/remove-page-access", async (req,res) => { // DELETE
     let response = await pageAccessForRoles.removePageAccessInfo(req.body);
     res.json(response);
 });
