@@ -30,9 +30,11 @@
   "homepage": "https://github.com/venkate5hgunda/SER515-Group12#readme",
   "dependencies": {
     "axios": "^0.21.4",
+    "bootstrap": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "firebase": "^9.1.1",
     "mongoose": "^6.0.5"
   },
   "devDependencies": {
