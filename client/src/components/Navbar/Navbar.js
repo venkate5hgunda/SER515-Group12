@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import { Button } from '../Button/Button';
-import './Navbar.css'
+import './Navbar.css';
 import {FaAdobe} from "react-icons/fa";
+import TokenGenerator from '../token-generator/token-generator';
 
 function Navbar() {
  const [click, setClick] = useState(false);
@@ -43,9 +44,9 @@ function Navbar() {
        </li>
         <li className='nav-item'>
         <Link to='/players' className='nav-links' onClick={closeMobileMenu}>Players</Link>
-       
        </li>
       </ul>
+      <TokenGenerator />
       {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
      </div>
     </nav>
