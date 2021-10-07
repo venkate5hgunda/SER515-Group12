@@ -9,13 +9,12 @@ export default class TokenGenerator extends React.Component {
             currRole: "admin",
         }
     }
-
     render() {
-        return (<FormExample role={this.state.currRole} />)
+        return (<TokenGenForm role={this.state.currRole} />)
     }
 }
 
-function FormExample(role) {
+function TokenGenForm(role) {
     const [show, setShow] = useState(false);
     const [formValidated, setFormValidated] = useState(false);
     const [usernameInvalid, setUsernameInvalid] = useState(false);
@@ -30,28 +29,34 @@ function FormExample(role) {
         initialState();
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         const form = event.currentTarget;
-        console.log(event);
+        event.preventDefault();
+        event.stopPropagation();
         if(form.checkValidity()===false) {
             setUsernameInvalid(true);
         }
         else {
-            console.log(event.target);
-            const username = event.target.filter((el) => {return el.id==='form.username'}).value;
-            const rolename = event.target.filter((el) => {return el.id==='form.rolename'}).options.filter((op) => {return op.selected}).value;
+            let username='', rolename='';
+            for(let i=0;i<form.length;i++) {
+                if(form[i].id==='form.username') username=form[i].value;
+                else if(form[i].id==='form.rolename') rolename=form[i].value;
+            }
             setFormValidated(true);
             setUsernameInvalid(false);
-            setTokenGenText(getToken(username, rolename));
+            setTokenGenText(await getToken(username, rolename));
         }
-        event.preventDefault();
-        event.stopPropagation();
     }
 
-    const  getToken = (username, rolename) => {
-        const tokenGenApiRoute = '/api/get-token'; // Need to add Base Route and Query Parameters.
-        // GET API Call
-        return `Token Generated for: ${username} and ${rolename}`; // return the Token Text
+    const getToken = async (username, rolename) => {
+        let response = await fetch(process.env.APP_API_ENDPOINT+`/get-token?user=${username}&role=${rolename}`);
+        let res = await response.json();
+        console.log(res.token);
+        return res.token;
+    }
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(tokenGenText);
     }
 
     const initialState = () => {
@@ -62,14 +67,14 @@ function FormExample(role) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleOpen}>
+            <Button variant="info" onClick={handleOpen}>
                 Generate Invite
             </Button>
             <Modal
-            show={show}
-            onHide={handleClose}
-            backdrop="static"
-            keyboard={false}>
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Generate Invitation Token</Modal.Title>
                 </Modal.Header>
@@ -95,7 +100,7 @@ function FormExample(role) {
                 <Modal.Footer>
                     <InputGroup className="mb-3">
                         <FormControl type="text" placeholder="Generated Token appears here" aria-label="Generated Token appears here" disabled={true} value={tokenGenText} />
-                        <Button variant="outline-secondary" id="copy-to-clipboard"><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
+                        <Button variant="outline-dark" id="copy-to-clipboard" onClick={copyToClipboard}><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
                     </InputGroup>
                 </Modal.Footer>
             </Modal>
@@ -137,7 +142,7 @@ function GetRolesDropdown(currRole) { // TODO: Need to add logic to dynamically 
             );     
         case "admin":
             return (
-                <Form.Select aria-label="Choose a Role" defaultValue="coach">
+                <Form.Select aria-label="Choose a Role" defaultValue="coach" >
                     <option value="coach">Coach</option>
                     <option value="referee">Referee</option>
                     <option value="field-manager">Field Manager</option>
