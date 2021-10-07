@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import { Button } from '../Button/Button';
-import './Navbar.css'
+import './Navbar.css';
 import {FaAdobe} from "react-icons/fa";
+import TokenGenerator from '../token-generator/token-generator';
+import { ButtonGroup } from 'react-bootstrap';
 
 function Navbar() {
  const [click, setClick] = useState(false);
@@ -43,9 +45,11 @@ function Navbar() {
        </li>
         <li className='nav-item'>
         <Link to='/players' className='nav-links' onClick={closeMobileMenu}>Players</Link>
-       
        </li>
       </ul>
+      <ButtonGroup className="me-2" aria-label="Invite Generation Button Group">
+        <TokenGenerator />
+      </ButtonGroup>
       {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
      </div>
     </nav>
