@@ -53,6 +53,11 @@ const tournamentTeamSchema = new mongoose.Schema({
         default: 'Not Provided',
         required: true
     },
+    group: {
+        type: String, // Provide the Group UUID in which the team is assigned after tournament is scheduled
+        default: 'Not Provided',
+        required: true
+    },
     homeLocation: {
         type: String, // Give: 'City, State' as String
         default: 'Not Provided',
