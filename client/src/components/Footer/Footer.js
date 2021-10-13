@@ -10,7 +10,7 @@ function Footer() {
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
           Join our newsletter to stay updated
-        </p>
+        </p>          
         <p className='footer-subscription-text'>
           You can unsubscribe at any time.
         </p>

@@ -10,13 +10,7 @@ function Navbar() {
  const closeMobileMenu = () => setClick(false);
  const [button] = useState(true) ;
  
-//  const showButton = () => {
-//   if (window.innerWidth <= 960){
-//     setButton(false);
-//   } else{
-//     setButton(true);
-//   }
-//  };
+
 
  
  
@@ -42,8 +36,13 @@ function Navbar() {
         <Link to='/teams' className='nav-links' onClick={closeMobileMenu}>Teams</Link>
        </li>
         <li className='nav-item'>
-        <Link to='/players' className='nav-links' onClick={closeMobileMenu}>Players</Link>
-       
+        <Link to='/sponsers' className='nav-links' onClick={closeMobileMenu}>Sponsers</Link>
+       </li>
+       <li className='nav-item'>
+        <Link to='/Rules and Regulations' className='nav-links' onClick={closeMobileMenu}>Rules and Regulations</Link>
+       </li>
+       <li className='nav-item'>
+        <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link>
        </li>
       </ul>
       {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
