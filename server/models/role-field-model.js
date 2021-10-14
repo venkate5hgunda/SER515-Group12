@@ -4,14 +4,14 @@ const {
 } = require('uuid');
 
 const roleFieldSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: function genUUID() {
-            return uuidv4();
-        },
-        required: true,
-        unique: true
-    },
+    // _id: {
+    //     type: String,
+    //     default: function genUUID() {
+    //         return uuidv4();
+    //     },
+    //     required: true,
+    //     unique: true
+    // },
     name: {
         type: String,
         default: 'Not Provided',
