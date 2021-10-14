@@ -25,14 +25,14 @@ const teamPlayerSchema = new mongoose.Schema({ // This is a Sub-Document of Tour
 });
 
 const tournamentTeamSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-        default: function genUUID() {
-            return uuidv4();
-        },
-        required: true,
-        unique: true
-    },
+    // _id: {
+    //     type: String,
+    //     default: function genUUID() {
+    //         return uuidv4();
+    //     },
+    //     required: true,
+    //     unique: true
+    // },
     name: {
         type: [String],
         default: 'Not Provided',
