@@ -24,15 +24,6 @@
   transition: all 0.3s ease-out;
 }
 
-.btn--outline-new {
-  background-color: transparent;
-  color: #242424;
-  padding: 8px 20px;
-  border: 1px solid #242424;
-  transition: all 0.3s ease-out;
-}
-
-
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
@@ -48,13 +39,5 @@
   transition: all 0.3s ease-out;
   background: #fff;
   color: #242424;
-  transition: 250ms;
-}
-
-
-.btn--outline-new:hover{
-  transition: all 0.3s ease-out;
-  background: #242424;
-  color: #fff;
   transition: 250ms;
 }
