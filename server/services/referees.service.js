@@ -1,4 +1,6 @@
-const refereeSchema = require('../models/role-referee-model');
+const {
+    refereeSchema
+} = require('../models/role-referee-model');
 
 async function getAllReferees() {
     return allRefereesDummyInput;

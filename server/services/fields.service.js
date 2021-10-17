@@ -1,4 +1,6 @@
-const fieldSchema = require('../models/role-field-model');
+const {
+    fieldSchema
+} = require('../models/role-field-model');
 
 async function getAllFields() {
     return allFieldsDummyInput;

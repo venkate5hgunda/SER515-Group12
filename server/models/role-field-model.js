@@ -24,4 +24,7 @@ const roleFieldSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('role-field', roleFieldSchema);
+module.exports = {
+    fieldModel: mongoose.model('role-field', roleFieldSchema),
+    fieldSchema: roleFieldSchema
+}

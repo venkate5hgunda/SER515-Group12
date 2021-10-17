@@ -1,11 +1,13 @@
-const teamsSchema = require('../models/tournament-team-model');
+const {
+    teamsSchema
+} = require('../models/tournament-team-model');
 
 async function getAllTeams() {
     return allTeamsDummyInput;
 }
 
 async function getTeam(teamId) {
-    
+
 }
 
 async function upsertTeam() {

@@ -19,4 +19,7 @@ const roleRefereeSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('role-referee', roleRefereeSchema);
+module.exports = {
+    refereeModel: mongoose.model('role-referee', roleRefereeSchema),
+    refereeSchema: roleRefereeSchema
+}
