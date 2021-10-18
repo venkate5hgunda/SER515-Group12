@@ -46,8 +46,10 @@ function Navbar() {
               <Link to='/schedule' className='nav-links' onClick={closeMobileMenu}>Schedule</Link>
             </li>
             <li className='nav-item'>
+              <Link to='/hotel' className='nav-links' onClick={closeMobileMenu}>Hotel</Link>
+            </li>
+            <li className='nav-item'>
               <Link to='/players' className='nav-links' onClick={closeMobileMenu}>Players</Link>
-
             </li>
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
