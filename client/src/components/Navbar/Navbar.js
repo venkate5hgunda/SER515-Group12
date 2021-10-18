@@ -26,7 +26,8 @@ function Navbar() {
      <div className='navbar-container'>
       
       <Link to="/" className="navbar-logo">
-      STW<FaAdobe color='red' size='3rem'/>
+      STW
+      {<FaAdobe color='red' size='3rem'/>}
       </Link>
       <div className="menu-icon" onClick={handleClick}>
        <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>

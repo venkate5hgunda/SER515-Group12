@@ -52,7 +52,8 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-            STW<FaAdobe color='red' size='3rem'/>
+            STW
+            {<FaAdobe color='red' size='3rem'/>}
               
             </Link>
           </div>
