@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import Hotels from './pages/Hotels/hotels';
 import Teams from './pages/Team/team'
 
+
 // TODO: Auto Build React when Node Starts
 function App() {
   return (

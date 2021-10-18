@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import { Button } from '../Button/Button';
 import './Navbar.css'
-// import {FaAdobe} from "react-icons/fa";
+import {FaAdobe} from "react-icons/fa";
 
 function Navbar() {
  const [click, setClick] = useState(false);
@@ -26,7 +26,7 @@ function Navbar() {
      <div className='navbar-container'>
       
       <Link to="/" className="navbar-logo">
-      STW{/*  <FaAdobe color='red' size='3rem'/> */}
+      STW<FaAdobe color='red' size='3rem'/>
       </Link>
       <div className="menu-icon" onClick={handleClick}>
        <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
