@@ -39,7 +39,7 @@ router.get("/api/health", (req, res) => {
 // });
 
 router.get("/api/get-tournament-schedule", async (req, res) => {
-    let response = await generateTournamentSchedule.genSchedule();
+    let response = await generateTournamentSchedule.genSchedule(req.query);
     res.json(response);
 });
 

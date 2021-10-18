@@ -5,7 +5,7 @@ async function getAllTeams() {
 }
 
 async function getTeam(teamId) {
-    
+
 }
 
 async function upsertTeam() {

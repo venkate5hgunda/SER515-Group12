@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "build-react": "cd client && npm run-script build && cd ..",
-    "start": "npm run build-react && node server/server.js",
+    "start": "npm run build-react && node --trace-warnings server/server.js",
     "test": "mocha test/**/*.*"
   },
   "repository": {
@@ -33,7 +33,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "groupstage": "^3.1.1",
     "mongoose": "^6.0.5",
+    "tournament": "^3.2.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
