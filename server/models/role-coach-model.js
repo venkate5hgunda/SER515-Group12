@@ -26,13 +26,14 @@ const roleCoachSchema = new mongoose.Schema({
         required: true
     },
     teams: {
-        type: [teamSchema], // Team UUIDs
-        default: () => ([{}]),
+        type: [String], // [teamSchema], // Team UUIDs
+        default: [],
         required: false
     }
 });
 
-module.exports = {
-    coachModel: mongoose.model('role-coach', roleCoachSchema),
-    coachSchema: roleCoachSchema
-}
+module.exports = mongoose.model('role-coach', roleCoachSchema);
+// module.exports = {
+//     coachModel: mongoose.model('role-coach', roleCoachSchema),
+//     coachSchema: roleCoachSchema
+// }

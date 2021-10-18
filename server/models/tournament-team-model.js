@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const {
     v4: uuidv4
 } = require('uuid');
-const {
-    coachSchema
-} = require('../models/role-coach-model');
-const {
-    divisionSchema
-} = require('../models/tournament-divison-model');
-const {
-    groupSchema
-} = require('../models/tournament-group-model');
+// const {
+//     coachSchema
+// } = require('../models/role-coach-model');
+// const {
+//     divisionSchema
+// } = require('../models/tournament-divison-model');
+// const {
+//     groupSchema
+// } = require('../models/tournament-group-model');
 
 const teamPlayerSchema = new mongoose.Schema({ // This is a Sub-Document of TournamentTeam Model
     // _id: {
@@ -48,23 +48,23 @@ const tournamentTeamSchema = new mongoose.Schema({
         required: true
     },
     coach: {
-        type: coachSchema, // Coach UUID
-        default: () => ({}),
+        type: String, // coachSchema, // Coach UUID
+        default: null,
         required: true
     },
     players: {
-        type: [teamPlayerSchema], // Team UUIDs
-        default: () => ([{}]), // Maximum of 4
+        type: [teamPlayerSchema], // [teamPlayerSchema], // Team UUIDs
+        default: [], // Maximum of 4
         required: false
     },
     division: {
-        type: divisionSchema, // Provide the Division UUID in which the team is being registered
-        default: new divisionModel(),
+        type: String, // divisionSchema, // Provide the Division UUID in which the team is being registered
+        default: null,
         required: true
     },
     group: {
-        type: groupSchema, // Provide the Group UUID in which the team is assigned after tournament is scheduled
-        default: () => ({}),
+        type: String, // groupSchema, // Provide the Group UUID in which the team is assigned after tournament is scheduled
+        default: null,
         required: true
     },
     homeLocation: {
@@ -74,6 +74,12 @@ const tournamentTeamSchema = new mongoose.Schema({
     }
 });
 
+// const teamModel = mongoose.model('tournament-team', tournamentTeamSchema);
+// const teamSchema = tournamentTeamSchema;
+// module.exports = {
+//     teamModel,
+//     teamSchema
+// }
 module.exports = {
     teamModel: mongoose.model('tournament-team', tournamentTeamSchema),
     teamSchema: tournamentTeamSchema

@@ -6,7 +6,7 @@ const {
     teamSchema
 } = require('../models/tournament-team-model');
 
-const tournamentDivisionSchema = new mongoose.Schema({
+const tournamentGroupchema = new mongoose.Schema({
     // _id: {
     //     type: String,
     //     default: function genUUID() {
@@ -22,12 +22,13 @@ const tournamentDivisionSchema = new mongoose.Schema({
     },
     teams: {
         type: [teamSchema], // Team UUIDs
-        default: () => ([{}]), // Maximum of 4
+        default: [], // Maximum of 4
         required: false
     }
 });
 
+// module.exports = mongoose.model('tournament-division', tournamentDivisionSchema);
 module.exports = {
-    divisionModel: mongoose.model('tournament-division', tournamentDivisionSchema),
-    divisionSchema: tournamentDivisionSchema
+    groupModel: mongoose.model('tournament-group', tournamentGroupchema),
+    groupSchema: tournamentGroupchema
 }

@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "build-react": "cd client && npm run-script build && cd ..",
-    "start": "npm run build-react && node server/server.js",
+    "start": "npm run build-react && node --trace-warnings server/server.js",
     "test": "mocha test/**/*.*"
   },
   "repository": {

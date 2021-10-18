@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const {
     v4: uuidv4
 } = require('uuid');
+// const groupSchema = require('../models/tournament-group-model');
 const {
     groupSchema
 } = require('../models/tournament-group-model');
@@ -21,12 +22,13 @@ const tournamentDivisionSchema = new mongoose.Schema({
         required: true
     },
     groups: {
-        type: [groupSchema], // Group UUIDs
+        type: [groupSchema], // [groupSchema], // Group UUIDs
         default: () => ([{}]),
         required: false
     }
 });
 
+// module.exports = mongoose.model('tournament-division', tournamentDivisionSchema);
 module.exports = {
     divisionModel: mongoose.model('tournament-division', tournamentDivisionSchema),
     divisionSchema: tournamentDivisionSchema

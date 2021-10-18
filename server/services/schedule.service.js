@@ -1,6 +1,4 @@
-const {
-    scheduleSchema
-} = require('../models/tournament-schedule-model');
+const scheduleSchema = require('../models/tournament-schedule-model');
 
 async function getAllGeneratedSchedules() { // If there are multiple schedules available, return all
 

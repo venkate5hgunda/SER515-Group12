@@ -21,13 +21,14 @@ const roleFieldManagerSchema = new mongoose.Schema({
         required: true
     },
     fields: {
-        type: [fieldSchema], // Field UUIDs
-        default: () => ([{}]),
+        type: [String], // [fieldSchema], // Field UUIDs
+        default: [], // () => ([{}]),
         required: false
     }
 });
 
-module.exports = {
-    fieldManagerModel: mongoose.model('role-field-manager', roleFieldManagerSchema),
-    fieldManagerSchema: roleFieldManagerSchema
-}
+module.exports = mongoose.model('role-field-manager', roleFieldManagerSchema);
+// module.exports = {
+//     fieldManagerModel: mongoose.model('role-field-manager', roleFieldManagerSchema),
+//     fieldManagerSchema: roleFieldManagerSchema
+// }

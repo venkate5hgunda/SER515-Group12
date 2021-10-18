@@ -8,6 +8,9 @@ const {
 const {
     divisionSchema
 } = require('../models/tournament-divison-model');
+// const {
+//     divisionSchema
+// } = require('../models/tournament-divison-model');
 const {
     groupSchema
 } = require('../models/tournament-group-model');
@@ -17,6 +20,7 @@ const {
 const {
     fieldSchema
 } = require('../models/role-field-model');
+
 
 const gameScheduleSchema = new mongoose.Schema({
     start: {
@@ -41,33 +45,33 @@ const tournamentGameSchema = new mongoose.Schema({
     //     unique: true
     // },
     division: {
-        type: divisionSchema,
-        default: () => ({}),
+        type: divisionSchema, // divisionSchema,
+        default: null,
         required: true
     },
     group: {
-        type: groupSchema,
-        default: () => ({}),
+        type: groupSchema, // String, 
+        default: null,
         required: true
     },
     homeTeam: { // To simplify the query for UI homeTeam|visitingTeam instead of []
         type: teamSchema,
-        default: () => ({}),
+        default: null,
         required: true
     },
     visitingTeam: {
         type: teamSchema,
-        default: () => ({}),
+        default: null,
         required: true
     },
     referee: {
         type: refereeSchema,
-        default: () => ({}),
+        default: null,
         required: true
     },
     field: {
         type: fieldSchema,
-        default: () => ({}),
+        default: null,
         required: true
     },
     schedule: {
@@ -77,11 +81,15 @@ const tournamentGameSchema = new mongoose.Schema({
     }
 });
 
+const gameModel = mongoose.model('tournament-game', tournamentGameSchema);
+const scheduleModel = mongoose.model('tournament-game-schedule', gameScheduleSchema);
+// module.exports = {
+//     gameModel,
+//     scheduleModel
+// };
 module.exports = {
-    teamModel: mongoose.model(
-        'tournament-game', tournamentGameSchema,
-        'tournament-game-schedule', gameScheduleSchema
-    ),
+    gameModel: gameModel,
+    scheduleModel: scheduleModel,
     gameSchema: tournamentGameSchema,
     scheduleSchema: tournamentGameSchema
 }

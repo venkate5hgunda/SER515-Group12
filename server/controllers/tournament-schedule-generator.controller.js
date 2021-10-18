@@ -1,7 +1,9 @@
 const teamsService = require('../services/teams.service');
 const fieldsService = require('../services/fields.service');
 const refereesService = require('../services/referees.service');
-const gameModel = require('../models/tournament-game-model');
+const {
+    gameModel
+} = require('../models/tournament-game-model');
 const GroupStage = require('groupstage');
 
 async function generateTournamentSchedule(options) {
@@ -44,12 +46,15 @@ function getGamesForDivision(teams, divisionId, groupSize) {
         var homeTeam = teams[matchGen[i]["p"][0] - 1];
         var visitingTeam = teams[matchGen[i]["p"][1] - 1];
         var game = new gameModel();
-        game.division = divisionId;
+        game.division = divisionId; // change it to division object
         game.homeTeam = homeTeam;
         game.visitingTeam = visitingTeam;
+        // add schedule property
+        // add referee assignment logic
+        // add field assignment logic
+        // add group assignment logic
         games.push(game);
     }
-    console.log(games);
     return games;
 }
 
