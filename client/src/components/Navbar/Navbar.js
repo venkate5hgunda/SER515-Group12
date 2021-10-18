@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '../Button/Button';
 import './Navbar.css'
-import {FaAdobe} from "react-icons/fa";
+import { FaAdobe } from "react-icons/fa";
 
 function Navbar() {
+
  const [click, setClick] = useState(false);
  const handleClick = () => setClick(!click);
  const closeMobileMenu = () => setClick(false);
@@ -50,6 +51,7 @@ function Navbar() {
     </nav>
   </>
  )
-}
 
-export default Navbar
+ }
+
+export default Navbar;
