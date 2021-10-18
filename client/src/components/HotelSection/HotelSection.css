@@ -9,3 +9,38 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+
+.category-container{
+    display: grid;
+    max-width: 1220px;
+    margin: auto;
+    padding:40px;
+    }
+
+
+.faq-title{
+        margin-bottom: 40px;
+    }
+    
+.category-title{
+        font-weight: 700;
+        font-style: normal;
+        color: #151948;
+        font-size: 36px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        line-height: 1.2;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+    
+
+@media (max-width: 700px){
+    .category-title{
+        font-size: 30px;
+    }
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before{
+    background-color:  transparent !important;
+}
