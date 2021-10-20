@@ -1,7 +1,6 @@
 import React from "react";
 
 import BootstrapTable from "react-bootstrap-table-next";
-import paginationFactory from "react-bootstrap-table2-paginator";
 
 import './Schedule.css'
 
@@ -144,14 +143,14 @@ const Schedule = () => {
     ];
     return (
         <div className={"main-schedule"}>
-            <div className={"schedule-table"}>
+            {/* <div className={"schedule-table"}>
                 <BootstrapTable
                     keyField="_id"
                     data={data}
                     columns={columns}
                     pagination={paginationFactory({ sizePerPage: 5 })}
                 />
-            </div>
+            </div> */}
         </div>
     )
 }
