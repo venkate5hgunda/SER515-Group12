@@ -9,11 +9,12 @@ const tokenGenerator = require('../controllers/token-generator.controller');
 const pageAccessForRoles = require('../controllers/page-access-for-roles.controller');
 
 // CRYPTO CONTROLLER ROUTES
-router.get("/api/get-token", (req, res) => {
-    res.send(tokenGenerator.generateToken(req.query.role, req.query.user));
+router.get("/api/get-token", (req,res) => {
+    let response = tokenGenerator.generateToken(req.query.role,req.query.user);
+    res.json(response);
 });
-router.get("/api/verify-token", (req, res) => {
-    res.send(tokenGenerator.validateToken(req.query.role, req.query.user, req.query.token));
+router.get("/api/verify-token", (req,res) => {
+    res.json(tokenGenerator.validateToken(req.query.role,req.query.user,req.query.token));
 });
 
 // PAGE ACCESS VERIFICATION ROUTES

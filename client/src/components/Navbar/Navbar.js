@@ -50,6 +50,9 @@ function Navbar() {
 
             </li>
           </ul>
+          <ButtonGroup className="me-2" aria-label="Invite Generation Button Group">
+            <TokenGenerator />
+          </ButtonGroup>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
       </nav>
