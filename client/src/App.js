@@ -6,7 +6,9 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Footer from './components/Footer/Footer';
 import Rules from './pages/Rules/Rules';
+import Schedule from './pages/Schedule/Schedule';
 
+// TODO: Auto Build React when Node Starts
 function App() {
   return (
     <>

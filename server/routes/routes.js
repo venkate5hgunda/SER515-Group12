@@ -7,13 +7,15 @@ const baseScheduleController = require('../controllers/base-schedule.controller'
 const generateTournamentSchedule = require('../controllers/tournament-schedule-generator.controller');
 const tokenGenerator = require('../controllers/token-generator.controller');
 const pageAccessForRoles = require('../controllers/page-access-for-roles.controller');
+const userRoleForAuth = require('../controllers/user-role-for-auth.controller');
 
 // CRYPTO CONTROLLER ROUTES
-router.get("/api/get-token", (req, res) => {
-    res.send(tokenGenerator.generateToken(req.query.role, req.query.user));
+router.get("/api/get-token", (req,res) => {
+    let response = tokenGenerator.generateToken(req.query.role,req.query.user);
+    res.json(response);
 });
-router.get("/api/verify-token", (req, res) => {
-    res.send(tokenGenerator.validateToken(req.query.role, req.query.user, req.query.token));
+router.get("/api/verify-token", (req,res) => {
+    res.json(tokenGenerator.validateToken(req.query.role,req.query.user,req.query.token));
 });
 
 // PAGE ACCESS VERIFICATION ROUTES
@@ -27,6 +29,20 @@ router.post("/api/upsert-page-access", async (req, res) => { // CREATE, UPDATE
 });
 router.post("/api/remove-page-access", async (req, res) => { // DELETE
     let response = await pageAccessForRoles.removePageAccessInfo(req.body);
+    res.json(response);
+});
+
+// USER ROLE CRUD FOR AUTHENTICATION/AUTHORIZATION ROUTES
+router.get("/api/get-user-role", async (req, res) => { // READ
+    let response = await userRoleForAuth.get(req.query); // Need pageName and role params
+    res.json(response);
+});
+router.get("/api/upsert-user-role", async (req, res) => { // CREATE, UPDATE
+    let response = await userRoleForAuth.upsert(req.query);
+    res.json(response);
+});
+router.get("/api/remove-user-role", async (req, res) => { // DELETE
+    let response = await userRoleForAuth.remove(req.body);
     res.json(response);
 });
 
