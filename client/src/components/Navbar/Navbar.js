@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { Button } from '../Button/Button';
 import './Navbar.css'
 import { FaAdobe } from "react-icons/fa";
+import { ButtonGroup } from 'react-bootstrap';
+import TokenGenerator from '../../components/token-generator/token-generator';
 
 function Navbar() {
   const [click, setClick] = useState(false);
