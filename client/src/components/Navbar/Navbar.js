@@ -7,20 +7,11 @@ import { ButtonGroup } from 'react-bootstrap';
 import TokenGenerator from '../../components/token-generator/token-generator';
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-  const [button] = useState(true);
 
-  //  const showButton = () => {
-  //   if (window.innerWidth <= 960){
-  //     setButton(false);
-  //   } else{
-  //     setButton(true);
-  //   }
-  //  };
-
-
+ const [click, setClick] = useState(false);
+ const handleClick = () => setClick(!click);
+ const closeMobileMenu = () => setClick(false);
+ const [button] = useState(true) ;
 
   return (
     <>
@@ -44,13 +35,15 @@ function Navbar() {
             <li className='nav-item'>
               <Link to='/teams' className='nav-links' onClick={closeMobileMenu}>Teams</Link>
             </li>
-            <li className='nav-item'>
-              <Link to='/schedule' className='nav-links' onClick={closeMobileMenu}>Schedule</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/players' className='nav-links' onClick={closeMobileMenu}>Players</Link>
-
-            </li>
+        <li className='nav-item'>
+        <Link to='/sponsers' className='nav-links' onClick={closeMobileMenu}>Sponsers</Link>
+       </li>
+       <li className='nav-item'>
+        <Link to='/Rules and Regulations' className='nav-links' onClick={closeMobileMenu}>Rules and Regulations</Link>
+       </li>
+       <li className='nav-item'>
+        <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link>
+       </li>
           </ul>
           <ButtonGroup className="me-2" aria-label="Invite Generation Button Group">
             <TokenGenerator />
