@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
-import { FaAdobe } from "react-icons/fa";
+// import {FaAdobe} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -28,7 +28,7 @@ function Footer() {
       </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
-
+          
           <div class='footer-link-items'>
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
@@ -38,7 +38,7 @@ function Footer() {
           </div>
         </div>
         <div className='footer-link-wrapper'>
-
+          
           <div class='footer-link-items'>
             <h2>Social Media</h2>
             <Link to='/'>Instagram</Link>
@@ -52,12 +52,11 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              STW
-              {<FaAdobe color='red' size='3rem'/>}
-
+            STW{/* <FaAdobe color='red' size='3rem'/> */}
+              
             </Link>
           </div>
-
+          
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
@@ -91,7 +90,7 @@ function Footer() {
             >
               <i class='fab fa-twitter' />
             </Link>
-
+            
           </div>
         </div>
       </section>
