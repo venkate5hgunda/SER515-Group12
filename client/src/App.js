@@ -9,7 +9,8 @@ import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule'
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-
+import Rules from './pages/Rules/Rules';
+import Sponsors from './pages/Sponsors/Sponsors';
 // TODO: Auto Build React when Node Starts
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
           <Route path='/' exact component={Home} />   
           <Route path='/about' exact component={About} />
           <Route path='/schedule' exact component={Schedule} />
+          <Route path='/Rules and Regulations' exact component={Rules}/>
           <Route path='/hotels' exact component={Hotels}/>
+          <Route path='/sponsors' exact component={Sponsors}/>
         </Switch>
         <Footer />
       </Router>
