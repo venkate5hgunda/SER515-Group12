@@ -8,6 +8,7 @@ const generateTournamentSchedule = require('../controllers/tournament-schedule-g
 const tokenGenerator = require('../controllers/token-generator.controller');
 const pageAccessForRoles = require('../controllers/page-access-for-roles.controller');
 const userRoleForAuth = require('../controllers/user-role-for-auth.controller');
+const divisionsService = require('../services/divisions.service');
 
 // CRYPTO CONTROLLER ROUTES
 router.get("/api/get-token", (req,res) => {
@@ -46,6 +47,25 @@ router.get("/api/remove-user-role", async (req, res) => { // DELETE
     res.json(response);
 });
 
+router.get("/api/get-tournament-schedule", async (req, res) => {
+    let response = await generateTournamentSchedule.genSchedule(req.query);
+    res.json(response);
+});
+
+// DIVISION INFORMATION RELATED ROUTES
+router.get("/api/divisions", async (req, res) => { // READ
+    let response = await divisionsService.getDivisions(req.query);
+    res.json(response);
+});
+router.get("/api/division-price", async (req, res) => { // READ
+    let response = await divisionsService.getDivisionPrice(req.query);
+    res.json(response);
+});
+router.get("/api/division-max-age", async (req, res) => { // READ
+    let response = await divisionsService.getDivisionMaxAge(req.query);
+    res.json(response);
+});
+
 router.get("/api/health", (req, res) => {
     res.send(appIndex.healthInformation());
 });
@@ -53,11 +73,6 @@ router.get("/api/health", (req, res) => {
 // router.get("/health", (req,res) => {
 //     res.send(appIndex.getIndexPage());
 // });
-
-router.get("/api/get-tournament-schedule", async (req, res) => {
-    let response = await generateTournamentSchedule.genSchedule(req.query);
-    res.json(response);
-});
 
 router.get("/api/baseschedule", (req, res) => {
     res.send(baseScheduleController.baseSchedule())
