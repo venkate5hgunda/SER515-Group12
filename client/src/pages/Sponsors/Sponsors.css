@@ -5,3 +5,7 @@
   text-align: center;
   line-height: 5;
 }
+.image {
+  height: 100px;
+  width: 100px;
+}
