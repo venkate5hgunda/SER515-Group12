@@ -8,10 +8,10 @@ import TokenGenerator from '../../components/token-generator/token-generator';
 
 function Navbar() {
 
- const [click, setClick] = useState(false);
- const handleClick = () => setClick(!click);
- const closeMobileMenu = () => setClick(false);
- const [button] = useState(true) ;
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+  const [button] = useState(true);
 
   return (
     <>
@@ -20,7 +20,7 @@ function Navbar() {
 
           <Link to="/" className="navbar-logo">
             STW
-            {<FaAdobe color='red' size='3rem'/>}
+            {<FaAdobe color='red' size='3rem' />}
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
@@ -36,20 +36,14 @@ function Navbar() {
               <Link to='/teams' className='nav-links' onClick={closeMobileMenu}>Teams</Link>
             </li>
             <li className='nav-item'>
-              <Link to='/schedule' className='nav-links' onClick={closeMobileMenu}>Schedule</Link>
+              <Link to='/hotels' className='nav-links' onClick={closeMobileMenu}>Hotels</Link>
             </li>
             <li className='nav-item'>
-               <Link to='/hotels' className='nav-links' onClick={closeMobileMenu}>Hotels</Link>
+              <Link to='/sponsors' className='nav-links' onClick={closeMobileMenu}>Sponsors</Link>
             </li>
-         <li className='nav-item'>
-        <Link to='/sponsers' className='nav-links' onClick={closeMobileMenu}>Sponsers</Link>
-       </li>
-       <li className='nav-item'>
-        <Link to='/Rules and Regulations' className='nav-links' onClick={closeMobileMenu}>Rules and Regulations</Link>
-       </li>
-       <li className='nav-item'>
-        <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link>
-       </li>
+            <li className='nav-item'>
+              <Link to='/Rules and Regulations' className='nav-links' onClick={closeMobileMenu}>Rules and Regulations</Link>
+            </li>
           </ul>
           <ButtonGroup className="me-2" aria-label="Invite Generation Button Group">
             <TokenGenerator />
@@ -61,4 +55,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
