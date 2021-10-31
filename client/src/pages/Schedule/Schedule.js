@@ -15,7 +15,7 @@ const Schedule = () => {
 
     useEffect(()=>{
         setLoading(true);
-        fetch('http://localhost:5001/api/get-tournament-schedule?groupSize=4')
+        fetch('process.env.APP_API_ENDPOINT+/get-tournament-schedule?groupSize=4')
             .then(response => response.json())
             .then(data => setData(data))
         setLoading(true);
