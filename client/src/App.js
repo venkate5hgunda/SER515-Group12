@@ -4,22 +4,23 @@ import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Switch, Route}  from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Footer from './components/Footer/Footer';
-import Rules from './pages/Rules/Rules';
-import Schedule from './pages/Schedule/Schedule';
+import Footer from './components/Footer/Footer'
+import Hotels from './pages/Hotels/hotels';
+import Schedule from './pages/Schedule/Schedule'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 
 // TODO: Auto Build React when Node Starts
 function App() {
   return (
     <>
       <Router>
-        
         <Navbar></Navbar>
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' exact component={About}/>
-          <Route path='/Rules and Regulations' exact component={Rules}/>
-          <Route path='/schedule' exact component={Schedule}/>
+          <Route path='/' exact component={Home} />   
+          <Route path='/about' exact component={About} />
+          <Route path='/schedule' exact component={Schedule} />
+          <Route path='/hotels' exact component={Hotels}/>
         </Switch>
         <Footer />
       </Router>
@@ -28,3 +29,4 @@ function App() {
 }
 
 export default App;
+      
