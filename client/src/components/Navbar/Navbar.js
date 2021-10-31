@@ -68,7 +68,7 @@ function ReactNavbar() {
   return (
       <BootstrapNavbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Container>
-          <BootstrapNavbar.Brand href = "#" >
+          <BootstrapNavbar.Brand href = "/" >
             <GiSoccerBall color='red' size='3rem'/>
           </BootstrapNavbar.Brand>
           <Nav className="mr-auto">
@@ -79,7 +79,8 @@ function ReactNavbar() {
             <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/FAQ"> FAQ </Nav.Link>
-            <TokenGenerator />
+          <TokenGenerator />
+          <Button variant='primary'>Sign Up</Button>
           </Nav>
         </Container>
       </BootstrapNavbar>
@@ -87,3 +88,38 @@ function ReactNavbar() {
 }
 
 export default Navbar
+
+            /* <Link to="/" className="navbar-logo">
+                        STW
+                        {<FaAdobe color='red' size='3rem'/>}
+                      </Link>
+                      <div className="menu-icon" onClick={handleClick}>
+                        <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+                      </div>
+                      <ul className={click ? 'nav-menu-active' : 'nav-menu'}>
+                        <li className='nav-item'>
+                          <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
+                        </li>
+                        <li className='nav-item'>
+                          <Link to='/about' className='nav-links' onClick={closeMobileMenu}>About Us</Link>
+                        </li>
+                        <li className='nav-item'>
+                          <Link to='/teams' className='nav-links' onClick={closeMobileMenu}>Teams</Link>
+                        </li>
+                        <li className='nav-item'>
+                          <Link to='/schedule' className='nav-links' onClick={closeMobileMenu}>Schedule</Link>
+                        </li>
+                        <li className='nav-item'>
+                           <Link to='/hotels' className='nav-links' onClick={closeMobileMenu}>Hotels</Link>
+                        </li>
+                     <li className='nav-item'>
+                    <Link to='/sponsers' className='nav-links' onClick={closeMobileMenu}>Sponsers</Link>
+                   </li>
+                   <li className='nav-item'>
+                    <Link to='/Rules and Regulations' className='nav-links' onClick={closeMobileMenu}>Rules and Regulations</Link>
+                   </li>
+                   <li className='nav-item'>
+                    <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link>
+                   </li>
+                      </ul>
+                      <ButtonGroup className="me-2" aria-label="Invite Generation Button Group"> */
