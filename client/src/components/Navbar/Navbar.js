@@ -36,10 +36,12 @@ function Navbar() {
               <Link to='/teams' className='nav-links' onClick={closeMobileMenu}>Teams</Link>
             </li>
             <li className='nav-item'>
-        <Link to='/hotels' className='nav-links' onClick={closeMobileMenu}>Hotels</Link>
-       
-       </li>
-        <li className='nav-item'>
+              <Link to='/schedule' className='nav-links' onClick={closeMobileMenu}>Schedule</Link>
+            </li>
+            <li className='nav-item'>
+               <Link to='/hotels' className='nav-links' onClick={closeMobileMenu}>Hotels</Link>
+            </li>
+         <li className='nav-item'>
         <Link to='/sponsers' className='nav-links' onClick={closeMobileMenu}>Sponsers</Link>
        </li>
        <li className='nav-item'>
