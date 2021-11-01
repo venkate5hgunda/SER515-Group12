@@ -19,6 +19,14 @@ function Navbar() {
 
 function ReactNavbar() {
   return (
+    <>
+      <style type="text/css">
+          {`
+          .btn-info {
+              margin: 5px;
+          }
+          `}
+      </style>
       <BootstrapNavbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Container>
         <BootstrapNavbar.Brand href="/">
@@ -35,12 +43,13 @@ function ReactNavbar() {
             <Nav.Link href="/maps"> Maps </Nav.Link>
             <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
-            <Nav.Link href="/FAQ"> FAQ </Nav.Link>
-          <TokenGenerator />
-          <Button variant='primary'>Sign Up</Button>
+            <Nav.Link href="/FAQ"> FAQ </Nav.Link>{'   '}
+            <TokenGenerator />{' '}
+            <Button variant='info'>Sign Up</Button>
           </Nav>
         </Container>
       </BootstrapNavbar>
+    </>
   )
 }
 
