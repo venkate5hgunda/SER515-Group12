@@ -40,9 +40,8 @@ function ReactNavbar() {
             <Nav.Link href="/teams"> Teams </Nav.Link>
             <Nav.Link href="/schedule"> Schedule </Nav.Link>
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
-            <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
-            <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
-            <Nav.Link href="/FAQ"> FAQ </Nav.Link>
+            <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
+            <Nav.Link href="/rules"> Rules </Nav.Link>
           <TokenGenerator />
           <Button variant='primary'>Sign Up</Button>
           </Nav>

@@ -20,9 +20,9 @@ function App() {
           <Route path='/' exact component={Home} />   
           <Route path='/about' exact component={About} />
           <Route path='/schedule' exact component={Schedule} />
-          <Route path='/Rules and Regulations' exact component={Rules}/>
+          <Route path='/rules' exact component={Rules}/>
           <Route path='/hotels' exact component={Hotels}/>
-          <Route path='/sponsors' exact component={Sponsors}/>
+          <Route path='/sponsors' exact component={Sponsors} />
         </Switch>
         <Footer />
       </Router>
