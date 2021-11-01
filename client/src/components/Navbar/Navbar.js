@@ -11,6 +11,7 @@ import {
   Nav
 } from 'react-bootstrap';
 import TokenGenerator from '../../components/token-generator/token-generator';
+import { IconContext } from 'react-icons/lib';
 
 function Navbar() {
 
@@ -68,8 +69,10 @@ function ReactNavbar() {
   return (
       <BootstrapNavbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Container>
-          <BootstrapNavbar.Brand href = "/" >
-            <GiSoccerBall color='red' size='3rem'/>
+        <BootstrapNavbar.Brand href="/">
+            <IconContext.Provider value={{ }}>
+              < GiSoccerBall color = "white" size = '4rem' />
+            </IconContext.Provider>
           </BootstrapNavbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/"> Home </Nav.Link>
