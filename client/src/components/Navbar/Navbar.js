@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import { Link } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import './Navbar.css'
 import {GiSoccerBall} from "react-icons/gi";
 import {
-  ButtonGroup,
   Navbar as BootstrapNavbar,
   Container,
   Nav
@@ -14,11 +13,6 @@ import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
 
 function Navbar() {
-
- const [click, setClick] = useState(false);
- const handleClick = () => setClick(!click);
- const closeMobileMenu = () => setClick(false);
- const [button] = useState(true) ;
 
   return (
     // <>
@@ -80,6 +74,7 @@ function ReactNavbar() {
             <Nav.Link href="/teams"> Teams </Nav.Link>
             <Nav.Link href="/schedule"> Schedule </Nav.Link>
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
+            <Nav.Link href="/maps"> Maps </Nav.Link>
             <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/FAQ"> FAQ </Nav.Link>
