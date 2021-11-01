@@ -21,35 +21,46 @@ function Sponsors() {
   <Container>
    <Row>
     <Col xs={4} md={4}>
+      <a href="https://www.adidas.com/us">
        <Image className='image'src={Adi} rounded />
        <p className='text'>Adidas</p>
+      </a>
       
     </Col>
     <Col xs={4} md={4}>
+      <a href="https://www.gatorade.com/">
        <Image className='image'src={gat} rounded />
        <p className='text'>The Gatorade Company</p>
-      
+      </a>
     </Col>
     <Col xs={4} md={4}>
+      <a href="https://www.underarmour.com/en-us/">
        <Image className='image'src={under} rounded />
        <p className='text'>Under Armour</p>
+      </a>
       
     </Col>
    </Row>
    <Row>
     <Col xs={4} md={4}>
+      <a href="https://www.fritolay.com/">
        <Image className='image'src={chips} rounded />
        <p className='text'>Frito-Lays</p>
+      </a>
      
     </Col>
     <Col xs={4} md={4}>
+      <a href="https://www.aa.com/homePage.do">
        <Image className='image'src={airline} rounded /> 
        <p className='text'>American Airlines</p>
+      </a>
       
     </Col>
     <Col xs={4} md={4}>
+      <a href="tsn.ca/">
        <Image className='image'src={network} rounded />
        <p className='text'>TSN Network</p>
+      </a>
       
     </Col>
    </Row>
