@@ -49,9 +49,8 @@ function TokenGenForm(role) {
     }
 
     const getToken = async (username, rolename) => {
-        let response = await fetch(process.env.APP_API_ENDPOINT+`/get-token?user=${username}&role=${rolename}`);
+        let response = await fetch(process.env.REACT_APP_API_ENDPOINT + `/get-token?user=${username}&role=${rolename}`);
         let res = await response.json();
-        console.log(res.token);
         return res.token;
     }
 
@@ -67,7 +66,14 @@ function TokenGenForm(role) {
 
     return (
         <>
-            <Button variant="info" onClick={handleOpen}>
+            <style type="text/css">
+                {`
+                .btn-light {
+                    margin: 5px;
+                }
+                `}
+            </style>
+            <Button variant="light" onClick={handleOpen}>
                 Generate Invite
             </Button>
             <Modal
