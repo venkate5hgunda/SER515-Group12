@@ -9,18 +9,19 @@ const Schedule = () => {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
-    const [data , setData] = useState([])
+    const [data, setData] = useState([]);
 
 
 
-    useEffect(()=>{
+    useEffect(() => {
         setLoading(true);
-        fetch(`${process.env.REACT_APP_API_ENDPOINT}+/get-tournament-schedule?groupSize=4`)
+        fetch(process.env.REACT_APP_API_ENDPOINT + '/get-tournament-schedule?groupSize=4')
             .then(response => response.json())
             .then(data => setData(data))
         setLoading(true);
-    },[])
-console.log(data)
+    }, []);
+
+    console.log(data)
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);

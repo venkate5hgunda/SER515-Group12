@@ -78,6 +78,7 @@ function ReactNavbar() {
             <Nav.Link href="/"> Home </Nav.Link>
             <Nav.Link href="/about"> About </Nav.Link>
             <Nav.Link href="/teams"> Teams </Nav.Link>
+            <Nav.Link href="/schedule"> Schedule </Nav.Link>
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
             <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
