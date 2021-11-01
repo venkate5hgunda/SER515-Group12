@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
-import BootstrapTable from "react-bootstrap-table-next";
 import './Schedule.css'
 import Pagination from "./Pagination";
 
