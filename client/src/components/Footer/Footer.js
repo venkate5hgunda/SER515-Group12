@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
-import { FaAdobe } from "react-icons/fa";
+import { SiAdobe } from "react-icons/si";
 
 function Footer() {
   return (
@@ -53,7 +53,7 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
               STW
-              {<FaAdobe color='red' size='3rem'/>}
+              {<SiAdobe color='red' size='3rem'/>}
 
             </Link>
           </div>
