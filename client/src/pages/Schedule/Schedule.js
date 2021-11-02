@@ -5,7 +5,6 @@ import Pagination from "./Pagination";
 
 
 const Schedule = () => {
-    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
@@ -13,11 +12,9 @@ const Schedule = () => {
 
 
     useEffect(() => {
-        setLoading(true);
         fetch(process.env.REACT_APP_API_ENDPOINT + '/get-tournament-schedule?groupSize=4')
             .then(response => response.json())
             .then(data => setData(data))
-        setLoading(true);
     }, []);
 
     console.log(data)

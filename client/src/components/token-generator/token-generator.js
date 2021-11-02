@@ -68,12 +68,12 @@ function TokenGenForm(role) {
         <>
             <style type="text/css">
                 {`
-                .btn-light {
+                .btn-outline-secondary {
                     margin: 5px;
                 }
                 `}
             </style>
-            <Button variant="light" onClick={handleOpen}>
+            <Button variant="outline-secondary" onClick={handleOpen}>
                 Generate Invite
             </Button>
             <Modal

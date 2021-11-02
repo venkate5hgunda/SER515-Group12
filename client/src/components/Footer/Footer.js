@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
-import { SiAdobe } from "react-icons/si";
+import { GiSoccerBall } from "react-icons/gi";
 
 function Footer() {
   return (
@@ -52,9 +52,7 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              STW
-              {<SiAdobe color='red' size='3rem'/>}
-
+              < GiSoccerBall color = "white" size = '4rem' />
             </Link>
           </div>
 
