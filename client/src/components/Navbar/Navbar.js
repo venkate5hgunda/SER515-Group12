@@ -13,10 +13,10 @@ import { IconContext } from 'react-icons/lib';
 function Navbar() {
 
 
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-  const [button] = useState(true);
+  // const [click, setClick] = useState(false);
+  // // const handleClick = () => setClick(!click);
+  // // const closeMobileMenu = () => setClick(false);
+  // const [button] = useState(true);
 
 
   return (
@@ -59,8 +59,8 @@ function ReactNavbar() {
             
             
             
-            <TokenGenerator />{' '}
-            <Button variant='info'>Sign Up</Button>
+            {/* <TokenGenerator />{' '}
+            <Button variant='info'>Sign Up</Button> */}
 
           </Nav>
         </Container>
