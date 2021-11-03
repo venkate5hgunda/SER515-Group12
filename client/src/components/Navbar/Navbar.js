@@ -12,6 +12,10 @@ import { IconContext } from 'react-icons/lib';
 
 function Navbar() {
 
+
+  
+
+
   return (
     <ReactNavbar />
   )
@@ -41,11 +45,18 @@ function ReactNavbar() {
             <Nav.Link href="/schedule"> Schedule </Nav.Link>
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
             <Nav.Link href="/maps"> Maps </Nav.Link>
-            <Nav.Link href="/sponsers"> Sponsors </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
+            <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
             <Nav.Link href="/FAQ"> FAQ </Nav.Link>{'   '}
+            
+          
+            
+            
+            
+            
             <TokenGenerator />{' '}
             <Button variant='info'>Sign Up</Button>
+
           </Nav>
         </Container>
       </BootstrapNavbar>
