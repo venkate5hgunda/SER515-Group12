@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import './Maps.css';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -24,12 +25,20 @@ class SimpleMap extends Component {
           <AnyReactComponent
             lat={33.42649}
             lng={-111.93255}
-            text="Sun Devil Football Stadium"
+            text="Sun Devil Stadium"
           />
+          <Marker lat={33.42649} lng={-111.93255} />
         </GoogleMapReact>
       </div>
     );
   }
+}
+
+const Marker = props => {
+  return <>
+    <div className="pin"></div>
+    <div className="pulse"></div>
+  </>
 }
 
 export default SimpleMap;

@@ -12,7 +12,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
    <IconButton
       style={{ zIndex:1,background: "white",position:'absolute',top:'50%',left:'5px'}}
@@ -22,7 +22,7 @@ function SamplePrevArrow(props) {
   );
 }
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
       <IconButton
       style={{zIndex:1, background: "white",position:'absolute',top:'50%',right:'5px'}}
@@ -36,7 +36,6 @@ function HeroSection() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 1,
     nextArrow: <SampleNextArrow />,
@@ -50,15 +49,15 @@ function HeroSection() {
       <p>ARE YOU READY FOR THE BIGGEST TOURNAMENT EVER!!</p>
       <Slider {...settings}>
           <div>
-            <img src={img1} style={{height:"100vh", width:"100%"}}/>
+            <img alt="Carousel" src={img1} style={{height:"100vh", width:"100%"}}/>
           </div>
           <div>
-            <img src={img2} style={{height:"100vh", width:"100%"}}/>
+            <img alt="Carousel 1" src={img2} style={{height:"100vh", width:"100%"}}/>
           </div>
           <div>
-            <img src={img3} style={{height:"100vh", width:"100%"}}/>
+            <img alt="Carousel 2" src={img3} style={{height:"100vh", width:"100%"}}/>
           </div>  <div>
-            <img src={img4} style={{height:"100vh", width:"100%"}}/>
+            <img alt="Carousel 3" src={img4} style={{height:"100vh", width:"100%"}}/>
           </div>
       
         </Slider>
