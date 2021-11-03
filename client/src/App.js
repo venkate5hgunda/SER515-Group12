@@ -8,8 +8,8 @@ import Footer from './components/Footer/Footer';
 import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
 import Maps from './pages/Maps/Maps';
+import TeamRegistration from './pages/team-registration/team-registration';
 
-// TODO: Auto Build React when Node Starts
 function App() {
   return (
     <>
@@ -20,7 +20,8 @@ function App() {
           <Route path='/about' exact component={About} />
           <Route path='/schedule' exact component={Schedule} />
           <Route path='/hotels' exact component={Hotels} />
-          <Route path='/maps' exact component={Maps}/>
+          <Route path='/maps' exact component={Maps} />
+          <Route path='/team-registration' exact component={TeamRegistration} />
         </Switch>
         <Footer />
       </Router>

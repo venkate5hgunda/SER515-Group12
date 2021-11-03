@@ -8,21 +8,23 @@ import img4 from '../../assets/images/img-home4.jpg';
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-   <IconButton
-      style={{ zIndex:1,background: "white",position:'absolute',top:'50%',left:'5px'}}
-      onClick={onClick}>
-       <KeyboardArrowLeftIcon style={{color:"black",fontSize:"30px",fontWeight:"700"}}/>
-   </IconButton>
+  //  <IconButton
+  //     style={{ zIndex:1,background: "white",position:'absolute',top:'50%',left:'5px'}}
+  //     onClick={onClick}>
+  //      <KeyboardArrowLeftIcon style={{color:"black",fontSize:"30px",fontWeight:"700"}}/>
+  //  </IconButton>
+    "duh"
   );
 }
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-      <IconButton
-      style={{zIndex:1, background: "white",position:'absolute',top:'50%',right:'5px'}}
-      onClick={onClick}>
-      <KeyboardArrowRightIcon style={{color:"black",fontSize:"30px",fontWeight:"700"}}/>
-  </IconButton>
+  //     <IconButton
+  //     style={{zIndex:1, background: "white",position:'absolute',top:'50%',right:'5px'}}
+  //     onClick={onClick}>
+  //     <KeyboardArrowRightIcon style={{color:"black",fontSize:"30px",fontWeight:"700"}}/>
+  // </IconButton>
+    "duuh"
   );
 }
 
