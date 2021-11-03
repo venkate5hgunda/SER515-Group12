@@ -13,10 +13,7 @@ import { IconContext } from 'react-icons/lib';
 function Navbar() {
 
 
-  // const [click, setClick] = useState(false);
-  // // const handleClick = () => setClick(!click);
-  // // const closeMobileMenu = () => setClick(false);
-  // const [button] = useState(true);
+  
 
 
   return (
@@ -52,15 +49,13 @@ function ReactNavbar() {
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
             <Nav.Link href="/FAQ"> FAQ </Nav.Link>{'   '}
             
-          <TokenGenerator />
-          <Button variant='primary'>Sign Up</Button>
-
+          
             
             
             
             
-            {/* <TokenGenerator />{' '}
-            <Button variant='info'>Sign Up</Button> */}
+            <TokenGenerator />{' '}
+            <Button variant='info'>Sign Up</Button>
 
           </Nav>
         </Container>
