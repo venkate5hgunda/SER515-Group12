@@ -50,9 +50,9 @@ router.get("/api/health", (req, res) => {
     res.send(appIndex.healthInformation());
 });
 // USED FOR UNIT TESTING
-// router.get("/health", (req,res) => {
-//     res.send(appIndex.getIndexPage());
-// });
+router.get("/health", (req,res) => {
+    res.send(appIndex.getIndexPage());
+});
 
 router.get("/api/get-tournament-schedule", async (req, res) => {
     let response = await generateTournamentSchedule.genSchedule(req.query);
@@ -63,7 +63,6 @@ router.get("/api/baseschedule", (req, res) => {
     res.send(baseScheduleController.baseSchedule())
 });
 
-// app.use(express.static(`${__dirname}/../client/build/`));
 router.get("/*", function (req, res) {
     res.sendFile('index.html', {
         root: path.join(__dirname, '../../client/build')
