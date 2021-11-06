@@ -1,0 +1,16 @@
+.tr-form-row {
+    margin: 5px
+}
+
+.tr-form-card {
+    margin: 5px
+}
+
+.tr-form-card-header-title {
+    text-align: center;
+    justify-content: center;
+}
+
+.tr-form-card-body {
+    padding: 2px
+}
