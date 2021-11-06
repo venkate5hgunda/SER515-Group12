@@ -4,11 +4,13 @@ import { GrInfo } from 'react-icons/gr';
 import './team-registration.css';
 
 // DIVISION [DONE]
-// TEAM NAME
-// GENDER AND AGE GROUP
-// COACH NAME
-// HOME LOCATION
-// PLAYERS NAME AND AGE
+// TEAM NAME [DONE]
+// GENDER AND AGE GROUP [DONE]
+// COACH NAME [DONE]
+// HOME LOCATION [DONE]
+// PLAYERS NAME AND AGE [NOT NEEDED]
+// REF: http://warriorclassic.com/cgi-bin/apply.pl#
+// TODO :: From -> (Verification, Submission and Payment) to the END
 
 export default class TeamRegistration extends React.Component {
     constructor(props) {
