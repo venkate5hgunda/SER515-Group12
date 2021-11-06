@@ -121,18 +121,3 @@ module.exports = {
     getDivisionPrice,
     getDivisionMaxAge
 }
-
-// async function upsertDivisions() {
-
-// }
-
-// async function deleteDivisions() {
-
-// }
-
-// allDivisionsDummyInput = []
-// for (i = 0; i < 4; i++) {
-//     tempSchema = new divisionSchema();
-//     tempSchema.name = "Boys Under " + (10 + i * 2);
-//     allDivisionsDummyInput.push(tempSchema);
-// }
