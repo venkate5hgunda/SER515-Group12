@@ -14,3 +14,7 @@
 .tr-form-card-body {
     padding: 2px
 }
+
+.tr-form-submit-button {
+    margin: 10px 5px 20px 5px;
+}

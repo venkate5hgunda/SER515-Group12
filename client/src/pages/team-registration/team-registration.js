@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Col, Row, OverlayTrigger, Button, Tooltip, Card } from 'react-bootstrap';
+import { Form, Col, Row, OverlayTrigger, Button, Tooltip, Card, ListGroup } from 'react-bootstrap';
 import { GrInfo } from 'react-icons/gr';
 import './team-registration.css';
 
@@ -361,7 +361,7 @@ function RegistrationForm(divisionsData) {
                                     <Form.Label>Enter their Contact Number</Form.Label>
                                 </Col>
                                 <Col md={10}>
-                                    <Form.Control type="number" placeholder="(000)000-0000" />
+                                    <Form.Control type="number" placeholder="(000) 000-0000" />
                                 </Col>
                             </Row>
                         </Form.Group>
@@ -373,6 +373,33 @@ function RegistrationForm(divisionsData) {
                     </Row>
                 </Card.Body>
             </Card>
+            <Card className="tr-form-card">
+                <Card.Header>
+                    <Card.Title className="tr-form-card-header-title">
+                        <h3>Verification, Submission and Payment</h3>
+                    </Card.Title>
+                </Card.Header>
+                <Card.Body className="tr-form-card-body">
+                    <ListGroup className="tr-form-row" variant="flush">
+                        <ListGroup.Item><b>STOP AND READ THIS!!!</b></ListGroup.Item>
+                        <ListGroup.Item>
+                        Please take this opportunity to check over your application to ensure that all the Fields have been completed. You MUST submit the application by clicking on the "Submit Application" button below for it to be received by the tournament. <b>DO NOT SEND A PRINT OUT of this form as your application!!</b>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <b>By submitting this application, you are indicating your acceptance of the terms below. Please read carefully.</b>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <div style={{ display: "inline-block", "font-size": "x-small" }} dangerouslySetInnerHTML={{ __html: formSubmissionConfirmation }}></div>
+                            <Form.Check type="checkbox" id="formSubmissionConfirmation" label="I understand and accept the terms and conditions"></Form.Check>
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Card.Body>
+            </Card>
+            <div className="d-grid gap-2">
+                <Button variant="success" size="lg" type="submit" className="tr-form-submit-button">
+                    Submit Application
+                </Button>
+            </div>
         </Form>
     )
 }
@@ -393,6 +420,10 @@ async function getDivisions() {
     let rawResponse = await fetch(process.env.REACT_APP_API_ENDPOINT + `/divisions`);
     let response = await rawResponse.json();
     return response;
+}
+
+function SubmissionConfirmation() {
+
 }
 
 // Team Information
@@ -431,3 +462,29 @@ let ageChartForPopup = "<span><b>DOB Chart for the 2022 Soccer Tournament</b><hr
     "<b>U18</b> - Born on or after <b>Jan 1, 2004</b><br>" +
     "<b>U19</b> - Born on or after <b>Jan 1, 2003</b><br>" +
     "<br><i>This is a reference guide. Not all ages listed may be offered for all genders. You may play up, but not down. This is a SPRING tournament.</i></span>"
+let formSubmissionConfirmation = `My team meets all the requirements as outlined in the tournament invitation.
+<br />I understand that the tournament reserves the right to accept or reject
+any team at its discretion. Applications are not considered on a first come
+basis. If my team is not accepted into the tournament that I will receive a
+refund in full. Cashing of the check by the tournament submitted with
+application DOES NOT indicate acceptance.
+<br />The application above is a COMPLETE and ACCURATE representation of my
+team's accomplishments and abilities.
+<br />If my team is accepted, I understand that registration is held on the
+Friday night before the tournament weekend, that I will have planned for a
+qualified representative to register at that time.
+<br />I understand that once a team is accepted and later withdraws, the entry
+fee is forfeited.
+<br />I understand that photography may be taken at the site and the
+participants, parents/guardians of the participants and/or the spectators have
+no recourse to compensation or discretion regarding the use of the photos.
+<br />I understand that inclement weather is a possibility and that such weather
+may result in the abbreviation or cancellation of tournament games. In the event
+this may occur, no refunds, full or partial, will be given.
+<br />I understand that I will receive information regarding my team's
+participation in this tournament via email and that I am responsible for
+informing the tournament of changes to the account provided on this application.
+<br />Please include my email in soccer tournament-related announcements.
+<br /><b>Your team is required to book hotel rooms using the hotels only listed below to participate in the tournament. Teams not staying at one or more of these properties, will not be considered for acceptance to the tournament.
+While you are free to select any hotel property you wish, you will be asked to VERIFY your rooming arrangements upon acceptance AND when you register your team on Friday night. The Soccer Classic organization assumes no liability by it's endorsement of a particular hotel.</b>
+<br /><br /> `
