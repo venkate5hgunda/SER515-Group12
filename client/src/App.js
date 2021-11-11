@@ -7,13 +7,25 @@ import About from './pages/About/About';
 import Footer from './components/Footer/Footer';
 import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
+
+import { AuthProvider } from "./contexts/AuthContext"
+import Login from "./pages/Login/Login"
+import PrivateRoute from "./pages/Login/PrivateRoute"
+import ForgotPassword from "./pages/Forgotpassword/ForgotPassword"
+
+
+import Rules from './pages/Rules/Rules';
+import Sponsors from './pages/Sponsors/Sponsors';
+
 import Maps from './pages/Maps/Maps';
 import TeamRegistration from './pages/team-registration/team-registration';
 
+// TODO: Auto Build React when Node Starts
 function App() {
   return (
     <>
       <Router>
+        <AuthProvider>
         <Navbar></Navbar>
         <Switch>
           <Route path='/' exact component={Home} />   
@@ -22,8 +34,12 @@ function App() {
           <Route path='/hotels' exact component={Hotels} />
           <Route path='/maps' exact component={Maps} />
           <Route path='/team-registration' exact component={TeamRegistration} />
+          <Route path='/Rules and Regulations' exact component={Rules}/>
+          <Route path='/sponsors' exact component={Sponsors} />
+          <Route path='/login' exact component={Login}/>
         </Switch>
         <Footer />
+        </AuthProvider>
       </Router>
     </> 
   );
