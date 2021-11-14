@@ -35,6 +35,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
+                    <th> Field </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,7 @@ const Schedule = () => {
                                     <td>{e.referee}</td>
                                     <td>{e.schedule.start}</td>
                                     <td>{e.schedule.end}</td>
+                                    <td>{"Old Trafford"}</td>
                                 </tr>
                             )
                             })
