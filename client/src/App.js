@@ -7,12 +7,10 @@ import About from './pages/About/About';
 import Footer from './components/Footer/Footer'
 import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
-
 import { AuthProvider } from "./contexts/AuthContext"
 import Login from "./pages/Login/Login"
 import PrivateRoute from "./pages/Login/PrivateRoute"
 import ForgotPassword from "./pages/Forgotpassword/ForgotPassword"
-
 
 import Rules from './pages/Rules/Rules';
 import Sponsors from './pages/Sponsors/Sponsors';
