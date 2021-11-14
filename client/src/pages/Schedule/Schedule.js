@@ -45,7 +45,7 @@ const Schedule = () => {
                                 <tr>
                                     <td>{e.homeTeam.name}</td>
                                     <td>{e.visitingTeam.name}</td>
-                                    <td>{e.referee}</td>
+                                    <td>{"Graham Poll"}</td>
                                     <td>{(e.schedule.start).match(/\d\d:\d\d/)[0]}</td>
                                     <td>{(e.schedule.end).match(/\d\d:\d\d/)[0]}</td>
                                     <td>{"Old Trafford"}</td>
