@@ -7,14 +7,13 @@ import About from './pages/About/About';
 import Footer from './components/Footer/Footer'
 import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
+import Referee from './pages/Referee/referee';
 import { AuthProvider } from "./contexts/AuthContext"
 import Login from "./pages/Login/Login"
 import PrivateRoute from "./pages/Login/PrivateRoute"
 import ForgotPassword from "./pages/Forgotpassword/ForgotPassword"
-
 import Rules from './pages/Rules/Rules';
 import Sponsors from './pages/Sponsors/Sponsors';
-
 import Maps from './pages/Maps/Maps';
 
 
@@ -34,6 +33,7 @@ function App() {
           <Route path='/sponsors' exact component={Sponsors} />
           <Route path='/maps' exact component={Maps}/>
           <Route path='/login' exact component={Login}/>
+          <Route path='/referee' exact component={Referee}/>
 
         </Switch>
         <Footer />
