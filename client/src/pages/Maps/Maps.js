@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import './Maps.css';
+import { useAuth } from "../../contexts/AuthContext"
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -14,6 +15,20 @@ class SimpleMap extends Component {
   };
 
   render() {
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
+    
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/login")
+        } catch {
+          setError("Failed to log out")
+        }
+      }
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
