@@ -46,6 +46,7 @@ function ReactNavbar() {
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
             <Nav.Link href="/maps"> Maps </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
+            <Nav.Link href="/team-registration">Team Registration</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
             <Nav.Link href="/FAQ"> FAQ </Nav.Link>
             <Nav.Link href="/referee"> Referee </Nav.Link>
