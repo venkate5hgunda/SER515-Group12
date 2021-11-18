@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
-import './Schedule.css'
+import './Schedule.css';
 import Pagination from "./Pagination";
 
 
