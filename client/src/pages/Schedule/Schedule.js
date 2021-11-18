@@ -35,6 +35,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
+                    <th> Field</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,7 @@ const Schedule = () => {
                                     <td>{"Graham Poll"}</td>
                                     <td>{(e.schedule.start).match(/\d\d:\d\d/)[0]}</td>
                                     <td>{(e.schedule.end).match(/\d\d:\d\d/)[0]}</td>
+                                    <td>{"Old Trafford"}</td>
                                 </tr>
                             )
                             })
