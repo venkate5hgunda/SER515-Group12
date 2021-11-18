@@ -44,7 +44,7 @@ const Schedule = () => {
                                 <tr>
                                     <td>{e.homeTeam.name}</td>
                                     <td>{e.visitingTeam.name}</td>
-                                    <td>{e.referee}</td>
+                                    <td>{"Graham Poll"}</td>
                                     <td>{e.schedule.start}</td>
                                     <td>{e.schedule.end}</td>
                                 </tr>
