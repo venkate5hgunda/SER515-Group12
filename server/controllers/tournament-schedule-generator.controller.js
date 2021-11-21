@@ -5,6 +5,8 @@ const {
     gameModel
 } = require('../models/tournament-game-model');
 const GroupStage = require('groupstage');
+const { fieldModel } = require('../models/role-field-model');
+const { refereeModel } = require('../models/role-referee-model');
 
 async function generateTournamentSchedule(options) {
     teams = await getTeams();
@@ -20,7 +22,7 @@ async function generateTournamentSchedule(options) {
     teamsByDivision = getTeamsByDivision(teams);
     allGames = [];
     for (const [key, val] of Object.entries(teamsByDivision)) {
-        allGames.push.apply(allGames, getGamesForDivision(val, key, options.groupSize));
+        allGames.push.apply(allGames, await getGamesForDivision(val, key, options.groupSize));
     }
     return allGames;
 }
@@ -37,11 +39,13 @@ function getTeamsByDivision(teams) {
     return teamsByDivision;
 }
 
-function getGamesForDivision(teams, divisionId, groupSize) {
+async function getGamesForDivision(teams, divisionId, groupSize) {
     var matchGen = new GroupStage(teams.length, {
         groupSize: groupSize
     }).matches;
     var games = [];
+    var fields = await getFields();
+    var referees = await getReferees();
     for (i = 0; i < matchGen.length; i++) {
         var homeTeam = teams[matchGen[i]["p"][0] - 1];
         var visitingTeam = teams[matchGen[i]["p"][1] - 1];
@@ -49,9 +53,12 @@ function getGamesForDivision(teams, divisionId, groupSize) {
         game.division = divisionId; // change it to division object
         game.homeTeam = homeTeam;
         game.visitingTeam = visitingTeam;
+        game.field = new fieldModel();
+        game.field.name = fields[Math.floor(Math.random() * fields.length)]["name"]; // put it in fieldModel
+        game.field.location = "Tempe";
+        game.referee = new refereeModel(); // put it in refereeModel
+        game.referee.name = referees[Math.floor(Math.random() * referees.length)]["name"];
         // add schedule property
-        // add referee assignment logic
-        // add field assignment logic
         // add group assignment logic
         games.push(game);
     }
@@ -63,11 +70,13 @@ async function getTeams() {
 }
 
 async function getFields() {
-    return await fieldsService.getAll();
+    fields = await fieldsService.getAll();
+    return fields;
 }
 
 async function getReferees() {
-    return await refereesService.getAll();
+    referees = await refereesService.getAll();
+    return referees;
 }
 
 module.exports = {
