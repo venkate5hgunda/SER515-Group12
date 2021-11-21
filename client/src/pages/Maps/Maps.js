@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useRef, useState } from "react"
 import GoogleMapReact from 'google-map-react';
 import './Maps.css';
 import { useAuth } from "../../contexts/AuthContext"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from "react"
 import '../../App.css';
 import TeamSection from '../../components/TeamSection/TeamSection'
 import { useAuth } from "../../contexts/AuthContext"
@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom"
 
 function Teams() {
 
-    const [error, setError] = useSstate("")
+    const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
     const history = useHistory()
     

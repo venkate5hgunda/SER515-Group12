@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from "react"
 import '../../App.css';
 import HotelSection from '../../components/HotelSection/HotelSection';
 import { useAuth } from "../../contexts/AuthContext"

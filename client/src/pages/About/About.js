@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from "react"
 import '../../App.css';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import { useAuth } from "../../contexts/AuthContext"
