@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../App.css';
-import { Container } from 'react-bootstrap';
+import { Card, Container } from "react-bootstrap";
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
