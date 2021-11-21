@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import HotelSection from '../../components/HotelSection/HotelSection';
 import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 function Hotels() {
     const [error, setError] = useState("")

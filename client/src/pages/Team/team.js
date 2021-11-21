@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import TeamSection from '../../components/TeamSection/TeamSection'
 import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 function Teams() {
 

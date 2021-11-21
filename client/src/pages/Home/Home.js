@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import HeroSection from '../../components/HeroSection/HeroSection';
 import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 function Home() {
     const [error, setError] = useState("")

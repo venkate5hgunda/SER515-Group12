@@ -12,6 +12,8 @@ import airline from '../../../src/assets/images/american.png';
 import network from '../../../src/assets/images/tsn.png';
 import './Sponsors.css';
 import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
+
 function Sponsors() {
 
   const [error, setError] = useState("")
