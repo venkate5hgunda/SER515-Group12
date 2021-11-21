@@ -2,9 +2,10 @@ const teamsService = require('../services/teams.service');
 const fieldsService = require('../services/fields.service');
 const refereesService = require('../services/referees.service');
 const {
-    gameModel
+    gameModel, scheduleModel
 } = require('../models/tournament-game-model');
 const GroupStage = require('groupstage');
+const moment = require('moment');
 const { fieldModel } = require('../models/role-field-model');
 const { refereeModel } = require('../models/role-referee-model');
 
@@ -58,7 +59,7 @@ async function getGamesForDivision(teams, divisionId, groupSize) {
         game.field.location = "Tempe";
         game.referee = new refereeModel(); // put it in refereeModel
         game.referee.name = referees[Math.floor(Math.random() * referees.length)]["name"];
-        // add schedule property
+        game.schedule = getTimeSlots(1)[0];
         // add group assignment logic
         games.push(game);
     }
@@ -77,6 +78,34 @@ async function getFields() {
 async function getReferees() {
     referees = await refereesService.getAll();
     return referees;
+}
+
+// tournament start date: 2020-12-03 09:00 AM
+var startTime = moment().set({ 'year': 2021, 'month': 11, 'date': 3, 'hour': 9, 'minute': 0, 'second': 0 });
+function getTimeSlots(length) {
+    let timeslots = [];
+    for (let i = 0; i < length; i++) {
+        if(startTime.get('hour')<9) {
+            startTime = startTime.set({'hour': 9, 'minute': 0, 'second': 0});
+        }
+        else if(startTime.get('hour')>=17) {
+            startTime = startTime.add(1, 'day');
+            startTime = startTime.set({'hour': 9, 'minute': 0, 'second': 0});
+        }
+        let timeSlot = new scheduleModel();
+        timeSlot.start = startTime.format('LLLL');
+        timeSlot.end = startTime.add(90, "minute").format('LLLL');
+        timeslots.push(timeSlot);
+    }
+    console.log(timeslots);
+    return timeslots;
+    // get the time slots
+    // create a dictionary of fields and referees
+    // a 2d matrix of field and time slot availability
+    // a 2d matrix of referees and time slot availability
+    // find the first available time slot for a game to match any of the field and referee
+    // update the availability of the field and referee
+    // return the time slot
 }
 
 module.exports = {
