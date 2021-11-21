@@ -11,7 +11,25 @@ import chips from '../../../src/assets/images/frito.png';
 import airline from '../../../src/assets/images/american.png';
 import network from '../../../src/assets/images/tsn.png';
 import './Sponsors.css';
+import { useAuth } from "../../contexts/AuthContext"
 function Sponsors() {
+
+  const [error, setError] = useState("")
+  const { currentUser, logout } = useAuth()
+  const history = useHistory()
+    
+  async function handleLogout() {
+      setError("")
+    
+      try {
+        await logout()
+        history.push("/login")
+      } catch {
+        setError("Failed to log out")
+      }
+    }
+
+
  return (
   <div className='spo'>
    <h1 className='head'>Here are our proud sponsors</h1>
