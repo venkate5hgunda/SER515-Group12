@@ -107,3 +107,5 @@ dist
 
 # Package-Lock Ignore
 package-lock.json
+
+.idea/
