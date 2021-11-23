@@ -24,13 +24,13 @@ const {
 
 const gameScheduleSchema = new mongoose.Schema({
     start: {
-        type: Date,
-        default: Date.now(),
+        type: String,
+        default: null,
         required: true
     },
     end: {
-        type: Date,
-        default: Date.now(),
+        type: String,
+        default: null,
         required: true
     }
 });
@@ -91,5 +91,5 @@ module.exports = {
     gameModel: gameModel,
     scheduleModel: scheduleModel,
     gameSchema: tournamentGameSchema,
-    scheduleSchema: tournamentGameSchema
+    scheduleSchema: gameScheduleSchema
 }

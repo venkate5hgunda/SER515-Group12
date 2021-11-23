@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
-import './Schedule.css'
+import './Schedule.css';
 import Pagination from "./Pagination";
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
@@ -53,7 +53,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th> Field </th>
+                    <th> Field</th>
                 </tr>
                 </thead>
                 <tbody>

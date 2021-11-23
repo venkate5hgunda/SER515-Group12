@@ -5,7 +5,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import ReCAPTCHA from "react-google-recaptcha";
 
 const states = [{label: "AK",
 value: "anything2"}, {label: "AL",
