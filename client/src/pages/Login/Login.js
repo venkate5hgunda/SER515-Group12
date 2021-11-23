@@ -10,8 +10,7 @@ export default function Login() {
   const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const [userCookie, setUserCookie] = useCookies(['username']);
-  const [roleCookie, setRoleCookie] = useCookies(['rolename']);
+  const [userCookie, setUserCookie] = useCookies(['user']);
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -22,7 +21,7 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value)
       if(emailRef.current.value=="test@test.com"){
         setUserCookie("username","test@test.com");
-        setRoleCookie("rolename","coach");
+        setUserCookie("rolename","coach");
         history.push("/test")
       }
       else{
