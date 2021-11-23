@@ -28,18 +28,20 @@ function App() {
       <Router>
         <AuthProvider>
         <Navbar></Navbar>
-        <Switch>
-          <Route path='/' exact component={Home} />   
-          <Route path='/about' exact component={About} />
-          <Route path='/schedule' exact component={Schedule} />
-          <Route path='/hotels' exact component={Hotels} />
-          <Route path='/maps' exact component={Maps} />
-          <Route path='/team-registration' exact component={TeamRegistration} />
-          <Route path='/Rules and Regulations' exact component={Rules}/>
-          <Route path='/sponsors' exact component={Sponsors} />
-          <Route path='/login' exact component={Login}/>
-          <Route path='/referee' exact component={Referee}/>
-        </Switch>
+          <div className="App-body-root">
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/about' exact component={About} />
+              <Route path='/schedule' exact component={Schedule} />
+              <Route path='/hotels' exact component={Hotels} />
+              <Route path='/maps' exact component={Maps} />
+              <Route path='/team-registration' exact component={TeamRegistration} />
+              <Route path='/Rules and Regulations' exact component={Rules}/>
+              <Route path='/sponsors' exact component={Sponsors} />
+              <Route path='/login' exact component={Login}/>
+              <Route path='/referee' exact component={Referee}/>
+            </Switch>
+          </div>
         <Footer />
         </AuthProvider>
       </Router>

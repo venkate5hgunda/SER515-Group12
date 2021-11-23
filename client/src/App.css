@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.App-body-root {
+  min-height: 200px;
+}
