@@ -1,7 +1,16 @@
-.details > p {
+.rar-details > p {
   text-align: center;
 }
 
-.details {
-  padding-left: 5rem;
+.rar-details .nav-link.active {
+  font-weight: bold;
+  color: darkslategray;
+}
+
+.rar-details {
+  margin: 20px 10px;
+}
+
+.rar-tab-content {
+  margin-top: 30px;
 }
