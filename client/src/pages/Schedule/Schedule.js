@@ -2,12 +2,30 @@ import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
 import './Schedule.css';
 import Pagination from "./Pagination";
+import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 
 const Schedule = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
+
+
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
+    
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/login")
+        } catch {
+          setError("Failed to log out")
+        }
+      }
 
 
 
