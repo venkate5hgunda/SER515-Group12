@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import './Rules.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tabs } from 'react-bootstrap';
 import { Tab } from 'react-bootstrap';
@@ -13,9 +14,9 @@ import Web1 from '../Rules/Web1';
 
 function Rules() {
  return (
-  <div className="details">
+  <div className="rar-details">
    
-   <Tabs>
+   <Tabs defaultActiveKey="application" id="rules-and-regulations" className="mb-6">
     <Tab eventKey="application" title="Application">
      <Application1 />
     </Tab>
@@ -37,7 +38,6 @@ function Rules() {
     <Tab eventKey="Web Site" title="Web Site">
      <Web1 />
     </Tab>
-    
    </Tabs>
   </div>
  );

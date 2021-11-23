@@ -1,10 +1,15 @@
+.about-container {
+  margin: 20px;
+}
+
 .about-container > p {
   font-size: 30px;
   text-align: center;
 }
 
-.about-container > pre {
-  text-align: center;
+.about-container > .about-container-text {
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .about-container > h3 {

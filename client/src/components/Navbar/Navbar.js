@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+// import './Navbar.css';
 import {GiSoccerBall} from "react-icons/gi";
 import {
   Navbar as BootstrapNavbar,
@@ -11,11 +11,6 @@ import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
 
 function Navbar() {
-
-
-  
-
-
   return (
     <ReactNavbar />
   )
@@ -48,10 +43,8 @@ function ReactNavbar() {
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/team-registration">Team Registration</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
-            <Nav.Link href="/FAQ"> FAQ </Nav.Link>
             <Nav.Link href="/referee"> Referee </Nav.Link>
             <TokenGenerator />
-            <Button variant='info'>Sign Up</Button>
           </Nav>
         </Container>
       </BootstrapNavbar>

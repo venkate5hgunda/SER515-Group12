@@ -97,7 +97,6 @@ function getTimeSlots(length) {
         timeSlot.end = startTime.add(90, "minute").format('LLLL');
         timeslots.push(timeSlot);
     }
-    console.log(timeslots);
     return timeslots;
     // get the time slots
     // create a dictionary of fields and referees

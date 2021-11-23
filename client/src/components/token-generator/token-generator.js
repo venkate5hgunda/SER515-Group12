@@ -71,9 +71,15 @@ function TokenGenForm(role) {
                 .btn-outline-secondary {
                     margin: 5px;
                 }
+                .token-gen-button {
+                    margin-left: 20px;
+                }
+                .token-gen-copy-button:hover {
+                    background-color: darkgrey;
+                }
                 `}
             </style>
-            <Button variant="outline-secondary" onClick={handleOpen}>
+            <Button className="token-gen-button" variant="outline-secondary" onClick={handleOpen}>
                 Generate Invite
             </Button>
             <Modal
@@ -106,7 +112,7 @@ function TokenGenForm(role) {
                 <Modal.Footer>
                     <InputGroup className="mb-3">
                         <FormControl type="text" placeholder="Generated Token appears here" aria-label="Generated Token appears here" disabled={true} value={tokenGenText} />
-                        <Button variant="outline-dark" id="copy-to-clipboard" onClick={copyToClipboard}><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
+                        <Button className="token-gen-copy-button" variant="outline-dark" id="copy-to-clipboard" onClick={copyToClipboard}><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
                     </InputGroup>
                 </Modal.Footer>
             </Modal>
