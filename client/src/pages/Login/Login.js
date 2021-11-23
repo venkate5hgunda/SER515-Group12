@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { useCookies } from 'react-cookie';
 
 export default function Login() {
   const emailRef = useRef()
@@ -9,23 +10,26 @@ export default function Login() {
   const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+  const [userCookie, setUserCookie] = useCookies(['username']);
+  const [roleCookie, setRoleCookie] = useCookies(['rolename']);
   const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
-
     try {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
       if(emailRef.current.value=="test@test.com"){
+        setUserCookie("username","test@test.com");
+        setRoleCookie("rolename","coach");
         history.push("/test")
       }
       else{
         history.push("/")
       }
-      
-    } catch {
+    } catch(e) {
+      console.log(e);
       setError("Failed to log in")
     }
 

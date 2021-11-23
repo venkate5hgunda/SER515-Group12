@@ -23,7 +23,6 @@ const Schedule = () => {
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-
     return (
         <div className={"main-schedule "}>
             <h2 className={"align-self-start table-heading"}>Schedule</h2>
