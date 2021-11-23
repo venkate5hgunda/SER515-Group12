@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Col, Row, OverlayTrigger, Button, Tooltip, Card, ListGroup } from 'react-bootstrap';
+import { Form, Col, Row, OverlayTrigger, Button, Tooltip, Card, ListGroup, Modal } from 'react-bootstrap';
 import { GrInfo } from 'react-icons/gr';
 import './team-registration.css';
-
-// DIVISION [DONE]
-// TEAM NAME [DONE]
-// GENDER AND AGE GROUP [DONE]
-// COACH NAME [DONE]
-// HOME LOCATION [DONE]
-// PLAYERS NAME AND AGE [NOT NEEDED]
-// REF: http://warriorclassic.com/cgi-bin/apply.pl#
-// TODO :: From -> (Verification, Submission and Payment) to the END
 
 export default class TeamRegistration extends React.Component {
     constructor(props) {
@@ -36,371 +27,392 @@ export default class TeamRegistration extends React.Component {
 
 // Root Function for Form
 function RegistrationForm(divisionsData) {
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
+    const handleConfirmationOpen = () => {
+        setShowConfirmation(true);
+    }
+
+    const handleConfirmationClose = () => {
+        setShowConfirmation(false);
+    }
 
     return (
-        <Form>
-            <Card className="tr-form-card">
-                <Card.Header>
-                    <Card.Title className="tr-form-card-header-title">
-                        <h3>TEAM REGISTRATION APPLICATION</h3>
-                    </Card.Title>
-                </Card.Header>
-                <Card.Body className="tr-form-card-body">
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridHowDidYouHear">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>How did you find us?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Select defaultValue="Choose Medium...">
-                                        <option>Choose Medium...</option>
-                                        <option>Facebook</option>
-                                        <option>Instagram</option>
-                                        <option>Twitter</option>
-                                        <option>Other</option>
-                                    </Form.Select>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Col md={2}>
-                            <Form.Label>Application Group (Division)</Form.Label>
-                        </Col>
-                        <Col md={9}>
-                            <Form.Group as={Col} controlId="formGridDivision">
-                                <DivisionSection divisions={divisionsData} />
+        <>
+            <Form>
+                <Card className="tr-form-card">
+                    <Card.Header>
+                        <Card.Title className="tr-form-card-header-title">
+                            <h3>TEAM REGISTRATION APPLICATION</h3>
+                        </Card.Title>
+                    </Card.Header>
+                    <Card.Body className="tr-form-card-body">
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridHowDidYouHear">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>How did you find us?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Select defaultValue="Choose Medium...">
+                                            <option>Choose Medium...</option>
+                                            <option>Facebook</option>
+                                            <option>Instagram</option>
+                                            <option>Twitter</option>
+                                            <option>Other</option>
+                                        </Form.Select>
+                                    </Col>
+                                </Row>
                             </Form.Group>
-                        </Col>
-                        <Col md={1}>
-                            <OverlayTrigger key="division-age-information" placement="left"
-                                overlay={
-                                    <Tooltip id="tooltip-division-age-information">
-                                        <div style={{ display: "inline-block", width: "180px", "font-size": "x-small" }} dangerouslySetInnerHTML={{ __html: ageChartForPopup }} />
-                                    </Tooltip>
-                                }>
-                                <Button variant="info"><GrInfo color="grey" size="1rem" />{"   Age"}</Button>
-                            </OverlayTrigger>
-                        </Col>
-                    </Row>
-                </Card.Body>
-            </Card>
-            <Card className="tr-form-card">
-                <Card.Header>
-                    <Card.Title className="tr-form-card-header-title">
-                        <h3>Team Information</h3>
-                    </Card.Title>
-                </Card.Header>
-                <Card.Body className="tr-form-card-body">
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridTeamName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Give your Team a Name</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Team Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridTeamGenderGroup">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Choose Gender & Group</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Row>
-                                        <Col md={6}>
-                                            <Form.Select defaultValue="Choose Gender...">
-                                                <option>Choose Gender...</option>
-                                                <option>Boys</option>
-                                                <option>Girls</option>
-                                                <option>Men</option>
-                                                <option>Women</option>
-                                            </Form.Select> 
-                                        </Col>
-                                        <Col md={6}>
-                                            <Form.Select defaultValue="Choose Group...">
-                                                <option>Choose Group...</option>
-                                                <option>U8</option>
-                                                <option>U9</option>
-                                                <option>U10</option>
-                                                <option>U11</option>
-                                                <option>U12</option>
-                                                <option>U13</option>
-                                                <option>U14</option>
-                                                <option>U15</option>
-                                                <option>U16</option>
-                                                <option>U17</option>
-                                                <option>U18</option>
-                                                <option>U19</option>
-                                            </Form.Select>  
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridOldestPlayerDOB">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Select DOB of Oldest Player</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="date" placeholder="Oldest Player DOB" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridCoachName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Who's the Coach !!!</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Coach Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridTeamCityState">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Where is the Team From?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Row>
-                                        <Col md={6}>
-                                            <Form.Control type="text" placeholder="City" />
-                                        </Col>
-                                        <Col md={6}>
-                                            <Form.Control type="text" placeholder="State" />
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridClubName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Which Club are you from?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Club Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridAssociationName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Which Association?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Association Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridAssociationName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Which League?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="League Name" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPlayLevel">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Choose Play Level?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Select defaultValue="Choose Play Level...">
-                                        <option>Choose Play Level...</option>
-                                        <option>Upper (GOLD)</option>
-                                        <option>Lower (RED)</option>
-                                    </Form.Select>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryJerseyColour">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Primary Jersey Colour?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Primary Colour" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridAltJerseyColour">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Alternate Jersey Colour?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="text" placeholder="Alternate Colour" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                </Card.Body>
-            </Card>
-            <Card className="tr-form-card">
-                <Card.Header>
-                    <Card.Title className="tr-form-card-header-title">
-                        <h3>Primary Contact Information</h3>
-                    </Card.Title>
-                </Card.Header>
-                <Card.Body className="tr-form-card-body">
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactName">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Contact Name</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Row>
-                                        <Col md={6}>
-                                            <Form.Control type="text" placeholder="First Name" />
-                                        </Col>
-                                        <Col md={6}>
-                                            <Form.Control type="text" placeholder="Last Name" />
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPimaryContactRole">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Contact is?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Select defaultValue="Choose Role...">
-                                        <option>Choose Role...</option>
-                                        <option>Head Coach</option>
-                                        <option>Assistant Coach</option>
-                                        <option>Team Representative</option>
-                                    </Form.Select>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactAddress">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Where does he/she Live?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control as="textarea" rows={3} placeholder="Address" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactLocation">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Which City/State/ZIP?</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Row>
-                                        <Col md={4}>
-                                            <Form.Control type="text" placeholder="City" />
-                                        </Col>
-                                        <Col md={4}>
-                                            <Form.Control type="text" placeholder="State" />
-                                        </Col>
-                                        <Col md={4}>
-                                            <Form.Control type="text" placeholder="ZIP" />
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactEmail">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Enter their Email Address</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="email" placeholder="primary-contact@soccer-club.com" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactNumber">
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Label>Enter their Contact Number</Form.Label>
-                                </Col>
-                                <Col md={10}>
-                                    <Form.Control type="number" placeholder="(000) 000-0000" />
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                    </Row>
-                    <Row className="tr-form-row">
-                        <Form.Group as={Col} controlId="formGridPrimaryContactNumber">
-                        <Form.Check type="checkbox" id="formGridPrimaryContactCommunicationPreference" label="Send application confirmation to the phone. You must also select the service provider to receive a text" />
-                        </Form.Group>
-                    </Row>
-                </Card.Body>
-            </Card>
-            <Card className="tr-form-card">
-                <Card.Header>
-                    <Card.Title className="tr-form-card-header-title">
-                        <h3>Verification, Submission and Payment</h3>
-                    </Card.Title>
-                </Card.Header>
-                <Card.Body className="tr-form-card-body">
-                    <ListGroup className="tr-form-row" variant="flush">
-                        <ListGroup.Item><b>STOP AND READ THIS!!!</b></ListGroup.Item>
-                        <ListGroup.Item>
-                        Please take this opportunity to check over your application to ensure that all the Fields have been completed. You MUST submit the application by clicking on the "Submit Application" button below for it to be received by the tournament. <b>DO NOT SEND A PRINT OUT of this form as your application!!</b>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <b>By submitting this application, you are indicating your acceptance of the terms below. Please read carefully.</b>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div style={{ display: "inline-block", "font-size": "x-small" }} dangerouslySetInnerHTML={{ __html: formSubmissionConfirmation }}></div>
-                            <Form.Check type="checkbox" id="formSubmissionConfirmation" label="I understand and accept the terms and conditions"></Form.Check>
-                        </ListGroup.Item>
-                    </ListGroup>
-                </Card.Body>
-            </Card>
-            <div className="d-grid gap-2">
-                <Button variant="success" size="lg" type="submit" className="tr-form-submit-button">
-                    Submit Application
-                </Button>
-            </div>
-        </Form>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Col md={2}>
+                                <Form.Label>Application Group (Division)</Form.Label>
+                            </Col>
+                            <Col md={9}>
+                                <Form.Group as={Col} controlId="formGridDivision">
+                                    <DivisionSection divisions={divisionsData} />
+                                </Form.Group>
+                            </Col>
+                            <Col md={1}>
+                                <OverlayTrigger key="division-age-information" placement="left"
+                                                overlay={
+                                                    <Tooltip id="tooltip-division-age-information">
+                                                        <div style={{ display: "inline-block", width: "180px", "font-size": "x-small" }} dangerouslySetInnerHTML={{ __html: ageChartForPopup }} />
+                                                    </Tooltip>
+                                                }>
+                                    <Button variant="info"><GrInfo color="grey" size="1rem" />{"   Age"}</Button>
+                                </OverlayTrigger>
+                            </Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
+                <Card className="tr-form-card">
+                    <Card.Header>
+                        <Card.Title className="tr-form-card-header-title">
+                            <h3>Team Information</h3>
+                        </Card.Title>
+                    </Card.Header>
+                    <Card.Body className="tr-form-card-body">
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridTeamName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Give your Team a Name</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Team Name" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridTeamGenderGroup">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Choose Gender & Group</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Row>
+                                            <Col md={6}>
+                                                <Form.Select defaultValue="Choose Gender...">
+                                                    <option>Choose Gender...</option>
+                                                    <option>Boys</option>
+                                                    <option>Girls</option>
+                                                    <option>Men</option>
+                                                    <option>Women</option>
+                                                </Form.Select>
+                                            </Col>
+                                            <Col md={6}>
+                                                <Form.Select defaultValue="Choose Group...">
+                                                    <option>Choose Group...</option>
+                                                    <option>U8</option>
+                                                    <option>U9</option>
+                                                    <option>U10</option>
+                                                    <option>U11</option>
+                                                    <option>U12</option>
+                                                    <option>U13</option>
+                                                    <option>U14</option>
+                                                    <option>U15</option>
+                                                    <option>U16</option>
+                                                    <option>U17</option>
+                                                    <option>U18</option>
+                                                    <option>U19</option>
+                                                </Form.Select>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridOldestPlayerDOB">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Select DOB of Oldest Player</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="date" placeholder="Oldest Player DOB" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridCoachName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Who's the Coach !!!</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Coach Name" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridTeamCityState">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Where is the Team From?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Row>
+                                            <Col md={6}>
+                                                <Form.Control type="text" placeholder="City" />
+                                            </Col>
+                                            <Col md={6}>
+                                                <Form.Control type="text" placeholder="State" />
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridClubName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Which Club are you from?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Club Name" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridAssociationName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Which Association?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Association Name" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridAssociationName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Which League?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="League Name" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPlayLevel">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Choose Play Level?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Select defaultValue="Choose Play Level...">
+                                            <option>Choose Play Level...</option>
+                                            <option>Upper (GOLD)</option>
+                                            <option>Lower (RED)</option>
+                                        </Form.Select>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryJerseyColour">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Primary Jersey Colour?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Primary Colour" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridAltJerseyColour">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Alternate Jersey Colour?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="text" placeholder="Alternate Colour" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                    </Card.Body>
+                </Card>
+                <Card className="tr-form-card">
+                    <Card.Header>
+                        <Card.Title className="tr-form-card-header-title">
+                            <h3>Primary Contact Information</h3>
+                        </Card.Title>
+                    </Card.Header>
+                    <Card.Body className="tr-form-card-body">
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactName">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Contact Name</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Row>
+                                            <Col md={6}>
+                                                <Form.Control type="text" placeholder="First Name" />
+                                            </Col>
+                                            <Col md={6}>
+                                                <Form.Control type="text" placeholder="Last Name" />
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactRole">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Contact is?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Select defaultValue="Choose Role...">
+                                            <option>Choose Role...</option>
+                                            <option>Head Coach</option>
+                                            <option>Assistant Coach</option>
+                                            <option>Team Representative</option>
+                                        </Form.Select>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactAddress">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Where does he/she Live?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control as="textarea" rows={3} placeholder="Address" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactLocation">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Which City/State/ZIP?</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Row>
+                                            <Col md={4}>
+                                                <Form.Control type="text" placeholder="City" />
+                                            </Col>
+                                            <Col md={4}>
+                                                <Form.Control type="text" placeholder="State" />
+                                            </Col>
+                                            <Col md={4}>
+                                                <Form.Control type="text" placeholder="ZIP" />
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactEmail">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Enter their Email Address</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="email" placeholder="primary-contact@soccer-club.com" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactNumber">
+                                <Row>
+                                    <Col md={2}>
+                                        <Form.Label>Enter their Contact Number</Form.Label>
+                                    </Col>
+                                    <Col md={10}>
+                                        <Form.Control type="number" placeholder="(000) 000-0000" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPrimaryContactNumber">
+                                <Form.Check type="checkbox" id="formGridPrimaryContactCommunicationPreference" label="Send application confirmation to the phone. You must also select the service provider to receive a text" />
+                            </Form.Group>
+                        </Row>
+                    </Card.Body>
+                </Card>
+                <Card className="tr-form-card">
+                    <Card.Header>
+                        <Card.Title className="tr-form-card-header-title">
+                            <h3>Verification, Submission and Payment</h3>
+                        </Card.Title>
+                    </Card.Header>
+                    <Card.Body className="tr-form-card-body">
+                        <ListGroup className="tr-form-row" variant="flush">
+                            <ListGroup.Item><b>STOP AND READ THIS!!!</b></ListGroup.Item>
+                            <ListGroup.Item>
+                                Please take this opportunity to check over your application to ensure that all the Fields have been completed. You MUST submit the application by clicking on the "Submit Application" button below for it to be received by the tournament. <b>DO NOT SEND A PRINT OUT of this form as your application!!</b>
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                <b>By submitting this application, you are indicating your acceptance of the terms below. Please read carefully.</b>
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                <div style={{ display: "inline-block", "font-size": "x-small" }} dangerouslySetInnerHTML={{ __html: formSubmissionConfirmation }}></div>
+                                <Form.Check type="checkbox" id="formSubmissionConfirmation" label="I understand and accept the terms and conditions"></Form.Check>
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Card.Body>
+                </Card>
+                <div className="d-grid gap-2">
+                    {/*removed type="submit" as I want to open a popup */}
+                    <Button variant="success" size="lg" className="tr-form-submit-button" onClick={handleConfirmationOpen}>
+                        Submit Application
+                    </Button>
+                </div>
+            </Form>
+            <Modal show={showConfirmation} onHide={handleConfirmationClose} backdrop="static" keyboard={false}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Team Registration Confirmation</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+
+                    Submission Confirmed !!!
+                </Modal.Body>
+            </Modal>
+        </>
     )
 }
 
@@ -447,7 +459,6 @@ function PostFormText() {
 
 }
 
-
 let ageChartForPopup = "<span><b>DOB Chart for the 2022 Soccer Tournament</b><hr>" +
     "<b>U08</b> - Born on or after <b>Jan 1, 2014</b><br>" +
     "<b>U09</b> - Born on or after <b>Jan 1, 2013</b><br>" +
@@ -486,5 +497,5 @@ participation in this tournament via email and that I am responsible for
 informing the tournament of changes to the account provided on this application.
 <br />Please include my email in soccer tournament-related announcements.
 <br /><b>Your team is required to book hotel rooms using the hotels only listed below to participate in the tournament. Teams not staying at one or more of these properties, will not be considered for acceptance to the tournament.
-While you are free to select any hotel property you wish, you will be asked to VERIFY your rooming arrangements upon acceptance AND when you register your team on Friday night. The Soccer Classic organization assumes no liability by it's endorsement of a particular hotel.</b>
+While you are free to select any hotel property you wish, you will be asked to VERIFY your rooming arrangements upon acceptance AND when you register your team on Friday night. The Soccer Classic organization assumes no liability by its endorsement of a particular hotel.</b>
 <br /><br /> `
