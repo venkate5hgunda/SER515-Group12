@@ -5,6 +5,9 @@ import { Link, useHistory } from "react-router-dom"
 import { useCookies } from 'react-cookie';
 
 export default function Login() {
+
+  var dict ={"test@test.com":"admin","aaa@a.com":"refree"}
+
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
@@ -19,9 +22,9 @@ export default function Login() {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      if(emailRef.current.value=="test@test.com"){
-        setUserCookie("username","test@test.com");
-        setUserCookie("rolename","coach");
+      if(emailRef.current.value in dict){
+        setUserCookie("username",emailRef.current.value);
+        setUserCookie("rolename",dict[emailRef.current.value]);
         history.push("/test")
       }
       else{
