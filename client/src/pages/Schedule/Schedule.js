@@ -54,7 +54,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th> Field</th>
+                    <th>Field</th>
                 </tr>
                 </thead>
                 <tbody>
