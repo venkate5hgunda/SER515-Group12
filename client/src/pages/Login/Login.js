@@ -22,7 +22,7 @@ export default function Login() {
       if(emailRef.current.value=="test@test.com"){
         setUserCookie("username","test@test.com");
         setUserCookie("rolename","coach");
-        history.push("/test")
+        history.push("/" + "coach-profile");
       }
       else{
         history.push("/")
@@ -50,16 +50,16 @@ export default function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100" style={{"margin-top": "20px" }} type="submit">
               Log In
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
+          <div className="w-100 text-center mt-3" style={{"margin": "20px 0px" }}>
             <Link to="/">Forgot Password?</Link>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2" style={{"margin-bottom": "20px" }}>
         Need an account? <Link to="/">Sign Up</Link>
       </div>
     </>
