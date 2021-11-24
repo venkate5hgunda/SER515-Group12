@@ -18,7 +18,7 @@ export default class TeamRegistration extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{"margin": "20px"}}>
                 <RegistrationForm divisions={this.state.divisions} />
             </div>
         )
@@ -40,6 +40,22 @@ function RegistrationForm(divisionsData) {
     return (
         <>
             <Form>
+                <Card className="tr-form-card">
+                    <Card.Header>
+                        <Card.Title className="tr-form-card-header-title">
+                            <h2>Apply to the 2022 Tempe Soccer Tournament</h2>
+                        </Card.Title>
+                    </Card.Header>
+                    <Card.Body className="tr-form-card-body">
+                        <Row className="tr-form-row">
+                            <Form.Group as={Col} controlId="formGridPreText">
+                                <Row>
+                                <div style={{ display: "inline-block", "font-size": "small" }} dangerouslySetInnerHTML={{ __html: applicationPreText }}></div>
+                                </Row>
+                            </Form.Group>
+                        </Row>
+                    </Card.Body>
+                </Card>
                 <Card className="tr-form-card">
                     <Card.Header>
                         <Card.Title className="tr-form-card-header-title">
@@ -434,30 +450,21 @@ async function getDivisions() {
     return response;
 }
 
-function SubmissionConfirmation() {
-
-}
-
-// Team Information
-function TeamInformation() {
-
-}
-
-// Other Information
-// Primary Contact, Secondary Contact, Team Performance History etc.
-function OtherInformation() {
-
-}
-
-// Pre-Form Text and Instructions
-function PreFormText() {
-
-}
-
-// Post-Form Text and Instructions
-function PostFormText() {
-
-}
+let applicationPreText = `
+<table cellspacing="10px" cellpadding="5px" border="0">
+<tbody><tr><td class="body" colspan="2" valign="top"><b>WHEN: </b></td><td class="body" valign="top">March Madness Tournament. (Starts 4th of March, 2022)</td></tr>
+<tr><td class="body" colspan="2" valign="top"><b>WHERE: </b></td><td class="body" valign="top">Tempe, Arizona</td></tr>
+<tr><td class="body" colspan="2" valign="top"><b>FEES: </b></td><td class="body" valign="top">We have a promotional flat fee of $600 for any division this season !!!</td></tr>
+<tr><td class="body" colspan="2" valign="top"><b>APPLICATION DEADLINE: </b></td><td>January 4th, 2022</td></tr>
+<tr><td class="body" colspan="2" valign="top" nowrap=""><b>PAY TO:&nbsp;</b></td><td class="body" valign="top">Arizona State Soccer Federation; ASU March Madness Tournament, Attn: Selection Committee, P.O. Box 24232, Tempe, Arizona 85281 <br>
+Credit Cards Accepted for Application Fees  <br><i class="fab fa-cc-paypal fa-2x"></i> <i class="fab fa-cc-visa fa-2x"></i> <i class="fab fa-cc-mastercard fa-2x"></i></td></tr>
+</tbody></table>
+<hr>
+When completing this application, PLEASE use proper form (Upper and lower case. Example: "Cleveland Tigers" instead of "cleveland tigers" or "CLEVELAND TIGERS".). 
+Also, do not use punctuation (',.&amp;;:() etc). Thank you.
+<p>Fields marked with a (*) are required. The form will NOT be accepted on-line with these blank.</p>
+<p>You are <b>strongly</b> encouraged to click on the HELP icons (<img src="https://tourneycentral.com/common/images/help.gif" width="17" height="15" alt="See the help for this" border="0">) next to the fields for additional information as well as guidance on completing the application correctly.</p>
+`
 
 let ageChartForPopup = "<span><b>DOB Chart for the 2022 Soccer Tournament</b><hr>" +
     "<b>U08</b> - Born on or after <b>Jan 1, 2014</b><br>" +
