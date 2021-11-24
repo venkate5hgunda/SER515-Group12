@@ -22,17 +22,10 @@ export default function Login() {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-<<<<<<< HEAD
       if(emailRef.current.value in dict){
         setUserCookie("username",emailRef.current.value);
         setUserCookie("rolename",dict[emailRef.current.value]);
         history.push("/test")
-=======
-      if(emailRef.current.value=="test@test.com"){
-        setUserCookie("username","test@test.com");
-        setUserCookie("rolename","coach");
-        history.push("/" + "coach-profile");
->>>>>>> main
       }
       else{
         history.push("/")
