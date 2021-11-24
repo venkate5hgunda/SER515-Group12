@@ -1,12 +1,12 @@
 import React from 'react';
 import './HeroSection.css';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img1 from '../../assets/images/img-home.jpg'
 import img2 from '../../assets/images/img-home2.jpg'
 import img3 from '../../assets/images/img-home3.jpg'
-import img4 from '../../assets/images/img-home4.jpg'
+import img4 from '../../assets/images/img-home4.jpg';
 import { IconButton } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -57,10 +57,10 @@ function HeroSection() {
           </div>
           <div>
             <img alt="Carousel 2" src={img3} style={{height:"100vh", width:"100%"}}/>
-          </div>  <div>
+          </div>
+          <div>
             <img alt="Carousel 3" src={img4} style={{height:"100vh", width:"100%"}}/>
           </div>
-      
         </Slider>
         <News />
         <Footer />

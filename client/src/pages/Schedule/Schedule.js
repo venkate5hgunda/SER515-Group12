@@ -1,13 +1,31 @@
 import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
-import './Schedule.css'
+import './Schedule.css';
 import Pagination from "./Pagination";
+import { useAuth } from "../../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 
 const Schedule = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
+
+
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
+    
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/login")
+        } catch {
+          setError("Failed to log out")
+        }
+      }
 
 
 
@@ -23,10 +41,11 @@ const Schedule = () => {
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-
     return (
         <div className={"main-schedule "}>
-            <h2 className={"align-self-start table-heading"}>Schedule</h2>
+            <div className={"schedule-header"}>
+                <h2 className={"align-self-start table-heading"}>Schedule</h2>
+            </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
                 <thead>
                 <tr>
@@ -35,7 +54,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th> Field </th>
+                    <th>Field</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,10 +64,10 @@ const Schedule = () => {
                                 <tr>
                                     <td>{e.homeTeam.name}</td>
                                     <td>{e.visitingTeam.name}</td>
-                                    <td>{"Graham Poll"}</td>
-                                    <td>{(e.schedule.start).match(/\d\d:\d\d/)[0]}</td>
-                                    <td>{(e.schedule.end).match(/\d\d:\d\d/)[0]}</td>
-                                    <td>{"Old Trafford"}</td>
+                                    <td>{e.referee.name}</td>
+                                    <td>{(e.schedule.start)}</td>
+                                    <td>{(e.schedule.end)}</td>
+                                    <td>{e.field.name}</td>
                                 </tr>
                             )
                             })

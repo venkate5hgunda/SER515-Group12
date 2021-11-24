@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+// import './Navbar.css';
 import {GiSoccerBall} from "react-icons/gi";
 import {
   Navbar as BootstrapNavbar,
@@ -9,13 +9,9 @@ import {
 } from 'react-bootstrap';
 import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
+import Logout from '../../pages/Login/Logout';
 
 function Navbar() {
-
-
-  
-
-
   return (
     <ReactNavbar />
   )
@@ -26,7 +22,7 @@ function ReactNavbar() {
     <>
       <style type="text/css">
           {`
-          .btn-info {
+          .sign-up-btn {
               margin: 5px;
           }
           `}
@@ -46,18 +42,11 @@ function ReactNavbar() {
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
             <Nav.Link href="/maps"> Maps </Nav.Link>
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
+            <Nav.Link href="/team-registration">Team Registration</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
-            <Nav.Link href="/FAQ"> FAQ </Nav.Link>
-            <Nav.Link href="/referee"> Referee </Nav.Link>{'   '}
-            
-          
-            
-            
-            
-            
-            <TokenGenerator />{' '}
-            <Button variant='info'>Sign Up</Button>
-
+            <Nav.Link href="/referee-registration"> Referee Registration</Nav.Link>
+            <TokenGenerator />
+            <Logout />
           </Nav>
         </Container>
       </BootstrapNavbar>

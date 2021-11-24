@@ -12,15 +12,15 @@
 }
 
 .table-schedule{
-    width: 1000px;
-    align-self: center;
-    min-width: 700px;
+  width: 80%;
+  align-self: center;
+  min-width: 700px;
 
 }
 
 .table-heading{
     color: white;
     position: relative;
-    left: 19%;
+    text-align: center;
     margin:20px;
 }

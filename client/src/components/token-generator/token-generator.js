@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Form, FormControl, InputGroup, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useCookies } from 'react-cookie';
 
 export default class TokenGenerator extends React.Component {
     constructor() {
@@ -19,6 +20,7 @@ function TokenGenForm(role) {
     const [formValidated, setFormValidated] = useState(false);
     const [usernameInvalid, setUsernameInvalid] = useState(false);
     const [tokenGenText, setTokenGenText] = useState('');
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
     const handleOpen = () => {
         setShow(true);
@@ -71,11 +73,20 @@ function TokenGenForm(role) {
                 .btn-outline-secondary {
                     margin: 5px;
                 }
+                .token-gen-button {
+                    margin-left: 20px;
+                }
+                .token-gen-copy-button:hover {
+                    background-color: darkgrey;
+                }
                 `}
             </style>
-            <Button variant="outline-secondary" onClick={handleOpen}>
-                Generate Invite
-            </Button>
+            {
+                (cookies["username"] && (cookies["rolename"]==="coach" || cookies["rolename"]==="referee" || cookies["rolename"]==="field-manager" || cookies["rolename"]==="team-director" || cookies["rolename"]==="referee-director" || cookies["rolename"]==="field-director" || cookies["rolename"]==="tournament-director" || cookies["rolename"]==="admin")) ? 
+                    <Button className="token-gen-button" variant="outline-secondary" onClick={handleOpen}>
+                        Generate Invite
+                    </Button> : <></>
+            }
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -106,7 +117,7 @@ function TokenGenForm(role) {
                 <Modal.Footer>
                     <InputGroup className="mb-3">
                         <FormControl type="text" placeholder="Generated Token appears here" aria-label="Generated Token appears here" disabled={true} value={tokenGenText} />
-                        <Button variant="outline-dark" id="copy-to-clipboard" onClick={copyToClipboard}><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
+                        <Button className="token-gen-copy-button" variant="outline-dark" id="copy-to-clipboard" onClick={copyToClipboard}><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="copy to clipboard" /></Button>
                     </InputGroup>
                 </Modal.Footer>
             </Modal>
