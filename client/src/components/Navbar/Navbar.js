@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap';
 import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
+import Logout from '../../pages/Login/Logout';
 
 function Navbar() {
   return (
@@ -43,8 +44,9 @@ function ReactNavbar() {
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/team-registration">Team Registration</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
-            <Nav.Link href="/referee"> Referee </Nav.Link>
+            <Nav.Link href="/referee-registration"> Referee Registration</Nav.Link>
             <TokenGenerator />
+            <Logout />
           </Nav>
         </Container>
       </BootstrapNavbar>

@@ -43,7 +43,9 @@ const Schedule = () => {
 
     return (
         <div className={"main-schedule "}>
-            <h2 className={"align-self-start table-heading"}>Schedule</h2>
+            <div className={"schedule-header"}>
+                <h2 className={"align-self-start table-heading"}>Schedule</h2>
+            </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
                 <thead>
                 <tr>
@@ -63,8 +65,8 @@ const Schedule = () => {
                                     <td>{e.homeTeam.name}</td>
                                     <td>{e.visitingTeam.name}</td>
                                     <td>{e.referee.name}</td>
-                                    <td>{e.schedule.start}</td>
-                                    <td>{e.schedule.end}</td>
+                                    <td>{(e.schedule.start)}</td>
+                                    <td>{(e.schedule.end)}</td>
                                     <td>{e.field.name}</td>
                                 </tr>
                             )
