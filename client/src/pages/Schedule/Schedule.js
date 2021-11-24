@@ -40,9 +40,10 @@ const Schedule = () => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = pageNumber => setCurrentPage(pageNumber);
+    let randomBackground = ["schedule-bg-1", "schedule-bg-2"][Math.floor(Math.random() * 2)];
 
     return (
-        <div className={"main-schedule "}>
+        <div className={"main-schedule "+randomBackground}>
             <div className={"schedule-header"}>
                 <h2 className={"align-self-start table-heading"}>Schedule</h2>
             </div>
