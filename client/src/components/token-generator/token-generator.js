@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Form, FormControl, InputGroup, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useCookies } from 'react-cookie';
 
 export default class TokenGenerator extends React.Component {
     constructor() {
@@ -19,6 +20,7 @@ function TokenGenForm(role) {
     const [formValidated, setFormValidated] = useState(false);
     const [usernameInvalid, setUsernameInvalid] = useState(false);
     const [tokenGenText, setTokenGenText] = useState('');
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
     const handleOpen = () => {
         setShow(true);
@@ -79,9 +81,12 @@ function TokenGenForm(role) {
                 }
                 `}
             </style>
-            <Button className="token-gen-button" variant="outline-secondary" onClick={handleOpen}>
-                Generate Invite
-            </Button>
+            {
+                (cookies["username"] && (cookies["rolename"]==="coach" || cookies["rolename"]==="referee" || cookies["rolename"]==="field-manager" || cookies["rolename"]==="team-director" || cookies["rolename"]==="referee-director" || cookies["rolename"]==="field-director" || cookies["rolename"]==="tournament-director" || cookies["rolename"]==="admin")) ? 
+                    <Button className="token-gen-button" variant="outline-secondary" onClick={handleOpen}>
+                        Generate Invite
+                    </Button> : <></>
+            }
             <Modal
                 show={show}
                 onHide={handleClose}
