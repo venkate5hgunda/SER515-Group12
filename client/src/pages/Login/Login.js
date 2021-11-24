@@ -31,7 +31,7 @@ export default function Login() {
       console.log(e);
       setError("Failed to log in")
     }
-
+    window.location.reload(false);
     setLoading(false)
   }
 
