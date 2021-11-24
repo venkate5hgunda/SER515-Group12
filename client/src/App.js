@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
 import Referee from './pages/Referee/referee';
+import CoachProfile from './components/coach-profile/coach-profile';
 
 import { AuthProvider } from "./contexts/AuthContext"
 import Login from "./pages/Login/Login"
@@ -39,7 +40,8 @@ function App() {
               <Route path='/Rules and Regulations' exact component={Rules}/>
               <Route path='/sponsors' exact component={Sponsors} />
               <Route path='/login' exact component={Login}/>
-              <Route path='/referee' exact component={Referee}/>
+              <Route path='/referee-registration' exact component={Referee} />
+              <Route path='/coach-profile' exact component={CoachProfile} />
             </Switch>
           </div>
         <Footer />
