@@ -1,6 +1,7 @@
 import { Button, Card, Image, ListGroup, Row, Col, Modal } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useState } from 'react';
+import React from 'react';
 
 export default function CoachProfile() {
     const [cookies, setCookie, removeCookie] = useCookies(['user']);

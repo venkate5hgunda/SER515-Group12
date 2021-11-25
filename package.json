@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/venkate5hgunda/SER515-Group12#readme",
   "dependencies": {
+    "@emotion/react": "^11.6.0",
     "@mui/icons-material": "^5.1.1",
     "@mui/material": "^5.1.1",
     "axios": "^0.24.0",

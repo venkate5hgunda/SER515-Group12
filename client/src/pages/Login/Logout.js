@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
+import React from 'react';
 
 export default function Logout() {
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
