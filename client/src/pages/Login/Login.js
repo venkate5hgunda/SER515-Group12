@@ -6,7 +6,9 @@ import { useCookies } from 'react-cookie';
 
 export default function Login() {
 
-  var dict ={"test@test.com":"admin","aaa@a.com":"refree","coach@test.com":"coach"}
+  var dict ={"admin@test.com":"admin","referee@test.com":"referee","coach@test.com":"coach","teamdir@test.com":"team-director",
+            "micheal@test.com":"admin","johndoe@test.com":"admin","demo1":"admin","refereedir@test.com":"referee-director",
+            "tournamentdir@test.com":"tournament-director"}
 
   const emailRef = useRef()
   const passwordRef = useRef()
