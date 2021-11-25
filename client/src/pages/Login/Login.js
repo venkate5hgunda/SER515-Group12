@@ -6,14 +6,14 @@ import { useCookies } from 'react-cookie';
 
 export default function Login() {
 
-  var dict ={"test@test.com":"admin","aaa@a.com":"refree"}
+  var dict ={"test@test.com":"admin","aaa@a.com":"refree","coach@test.com":"coach"}
 
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const [userCookie, setUserCookie] = useCookies(['user']);
+  const [ userCookie, setUserCookie] = useCookies(['user']);
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -25,7 +25,7 @@ export default function Login() {
       if(emailRef.current.value in dict){
         setUserCookie("username",emailRef.current.value);
         setUserCookie("rolename",dict[emailRef.current.value]);
-        history.push("/test")
+        history.push("/"+dict[emailRef.current.value]+"-profile")
       }
       else{
         history.push("/")
