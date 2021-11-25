@@ -1,0 +1,23 @@
+.heads {
+  text-align: center;
+  line-height: 2;
+}
+.sponsor-card-image {
+  max-height: 100px;
+  width: auto;
+}
+
+.sponsor-card {
+  margin: 10px;
+  /* padding: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #ccc;
+  align-items: center;
+}
+
+.sponsor-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
