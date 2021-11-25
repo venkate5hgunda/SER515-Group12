@@ -62,8 +62,7 @@ function HeroSection() {
             <img alt="Carousel 3" src={img4} style={{height:"100vh", width:"100%"}}/>
           </div>
         </Slider>
-        <News />
-        <Footer />
+        
     </div>
   );
 }
