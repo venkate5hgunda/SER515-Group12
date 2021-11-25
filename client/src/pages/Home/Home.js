@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react"
 import '../../App.css';
 import HeroSection from '../../components/HeroSection/HeroSection';
 import { useAuth } from "../../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
+import News from '../../components/News/News';
 
 function Home() {
     const [error, setError] = useState("")
@@ -22,6 +23,7 @@ function Home() {
  return (
   <>
    <HeroSection />
+   <News />
   </>
  );
 }

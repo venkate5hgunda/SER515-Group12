@@ -10,7 +10,8 @@ import img4 from '../../assets/images/img-home4.jpg';
 import { IconButton } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-
+import News from '../News/News';
+import Footer from '../Footer/Footer';
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
@@ -61,6 +62,7 @@ function HeroSection() {
             <img alt="Carousel 3" src={img4} style={{height:"100vh", width:"100%"}}/>
           </div>
         </Slider>
+        
     </div>
   );
 }
