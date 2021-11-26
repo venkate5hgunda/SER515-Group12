@@ -9,16 +9,12 @@ import Hotels from './pages/Hotels/hotels';
 import Schedule from './pages/Schedule/Schedule';
 import Referee from './pages/Referee/referee';
 import CoachProfile from './components/coach-profile/coach-profile';
-
 import { AuthProvider } from "./contexts/AuthContext"
 import Login from "./pages/Login/Login"
 import PrivateRoute from "./pages/Login/PrivateRoute"
 import ForgotPassword from "./pages/Forgotpassword/ForgotPassword"
-
-
 import Rules from './pages/Rules/Rules';
 import Sponsors from './pages/Sponsors/Sponsors';
-
 import Maps from './pages/Maps/Maps';
 import TeamRegistration from './pages/team-registration/team-registration';
 import ApplicationForms from './pages/ApplicationForms/application-forms';
