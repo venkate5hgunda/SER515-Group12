@@ -26,7 +26,8 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2",
     "react-cookie": "^4.1.1",
-    "react-loading": "^2.0.3"
+    "react-loading": "^2.0.3",
+    "react-player": "^2.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
