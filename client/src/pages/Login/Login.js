@@ -5,12 +5,17 @@ import { Link, useHistory } from "react-router-dom"
 import { useCookies } from 'react-cookie';
 
 export default function Login() {
+
+  var dict ={"admin@test.com":"admin","referee@test.com":"referee","coach@test.com":"coach","teamdir@test.com":"team-director",
+            "micheal@test.com":"admin","johndoe@test.com":"admin","demo1":"admin","refereedir@test.com":"referee-director",
+            "tournamentdir@test.com":"tournament-director"}
+
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const [userCookie, setUserCookie] = useCookies(['user']);
+  const [ userCookie, setUserCookie] = useCookies(['user']);
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -19,10 +24,10 @@ export default function Login() {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      if(emailRef.current.value=="test@test.com"){
-        setUserCookie("username","test@test.com");
-        setUserCookie("rolename","coach");
-        history.push("/" + "coach-profile");
+      if(emailRef.current.value in dict){
+        setUserCookie("username",emailRef.current.value);
+        setUserCookie("rolename",dict[emailRef.current.value]);
+        history.push("/"+dict[emailRef.current.value]+"-profile")
       }
       else{
         history.push("/")
