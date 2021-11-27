@@ -32,3 +32,8 @@
     text-align: center;
     margin:20px;
 }
+
+.schedule-header{
+  display: flex;
+  justify-content: space-around;
+}
