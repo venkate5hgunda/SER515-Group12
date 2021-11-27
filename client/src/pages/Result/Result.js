@@ -50,7 +50,7 @@ const Schedule = () => {
         <div className={"main-schedule "+randomBackground}>
             <div className={"schedule-header"}>
                 <h2 className={"align-self-start table-heading"}>Results</h2>
-                {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' }
+                {/* {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' } */}
             </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
                 <thead>
@@ -73,7 +73,7 @@ const Schedule = () => {
                                     <td>{e.referee.name}</td>
                                     <td>{(e.schedule.start)}</td>
                                     <td>{(e.schedule.end)}</td>
-                                    <td>{e.field.name}</td>
+                                    {true  ? <td><input type={"text"}></input></td> :<td>{e.field.name}</td>}
                                 </tr>
                             )
                             })
