@@ -67,6 +67,24 @@ export default function Login() {
       <div className="w-100 text-center mt-2" style={{"margin-bottom": "20px" }}>
         Need an account? <Link to="/">Sign Up</Link>
       </div>
+      <div className={"p-3"}>
+        <h6>Copyright and Terms of Use Statement
+        Please read before attempting to log in.
+         </h6>
+         <p>
+        Information and products are made available on this web site subject to the following terms and conditions. By accessing this site, you agree to these terms and conditions. Rivershark, Inc. reserves the right to change these terms and conditions, and the products, services, prices, and programs mentioned in this site at any time, without notice, at its sole discretion.
+
+        Rivershark, Inc. reserves the right to seek all remedies available by law and in equity for any violation of these terms and conditions. Any rights not expressly granted herein are reserved.
+
+        The information on this web site is protected by international copyright laws. Except as specifically permitted, no portion of this web site may be distributed or reproduced by any means, or in any form, without Rivershark, Inc's prior written permission. 
+        
+      
+        COPYRIGHT NOTICE: © 1999 - 2021 Rivershark, Inc. All rights reserved.
+
+        "Rivershark" and "www.tourneycentral.com" are trade names of Rivershark, Inc.
+      
+        </p>
+      </div>
     </>
   )
 }
