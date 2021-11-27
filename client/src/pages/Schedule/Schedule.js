@@ -4,9 +4,13 @@ import './Schedule.css';
 import Pagination from "./Pagination";
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { useCookies } from 'react-cookie';
 
 
 const Schedule = () => {
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
+    console.log(cookies["username"]);
+    console.log(cookies["rolename"] === "tournament-director");
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
@@ -46,6 +50,7 @@ const Schedule = () => {
         <div className={"main-schedule "+randomBackground}>
             <div className={"schedule-header"}>
                 <h2 className={"align-self-start table-heading"}>Schedule</h2>
+                {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' }
             </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
                 <thead>
