@@ -44,6 +44,7 @@ function ReactNavbar() {
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/application-forms">Apply</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
+            <Nav.Link href="/display-result"> Result </Nav.Link>
             <TokenGenerator />
             <Logout />
           </Nav>

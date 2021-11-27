@@ -1,0 +1,39 @@
+.main-schedule{
+  
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  /* object-fit: contain; */
+
+}
+
+.schedule-bg-1 {
+  background: url("../../assets/images/soccer-stadium-background-image-1.jpg") center center/cover no-repeat;
+}
+
+.schedule-bg-2 {
+  background: url("../../assets/images/soccer-stadium-background-image-2.jpeg") center center/cover no-repeat;
+}
+
+.table-schedule{
+  width: 80%;
+  align-self: center;
+  min-width: 700px;
+
+}
+
+.table-heading{
+    color: white;
+    position: relative;
+    text-align: center;
+    margin:20px;
+}
+
+.schedule-header{
+  display: flex;
+  justify-content: space-around;
+}
