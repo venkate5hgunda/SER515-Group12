@@ -36,9 +36,4 @@
 .schedule-header{
   display: flex;
   justify-content: space-around;
-  align-items: center;
-}
-
-#button-sch{
-  height : 40px;
 }

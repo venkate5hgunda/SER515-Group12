@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Table} from 'react-bootstrap';
-import './Schedule.css';
+import './Result.css';
 import Pagination from "./Pagination";
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
@@ -10,7 +10,7 @@ import { useCookies } from 'react-cookie';
 const Schedule = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     console.log(cookies["username"]);
-    console.log(cookies["rolename"] === "tournament-director");
+    console.log(cookies["rolename"] === "coach");
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
@@ -49,8 +49,8 @@ const Schedule = () => {
     return (
         <div className={"main-schedule "+randomBackground}>
             <div className={"schedule-header"}>
-                <h2 className={"align-self-start table-heading"}>Schedule</h2>
-                {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' }
+                <h2 className={"align-self-start table-heading"}>Results</h2>
+                {/* {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' } */}
             </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
                 <thead>
@@ -60,7 +60,7 @@ const Schedule = () => {
                     <th>Referee</th>
                     <th>Start Time</th>
                     <th>End Time</th>
-                    <th>Field</th>
+                    <th>Results</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@ const Schedule = () => {
                                     <td>{e.referee.name}</td>
                                     <td>{(e.schedule.start)}</td>
                                     <td>{(e.schedule.end)}</td>
-                                    <td>{e.field.name}</td>
+                                    {true  ? <td><input type={"text"}></input></td> :<td>{e.field.name}</td>}
                                 </tr>
                             )
                             })
