@@ -66,7 +66,7 @@ export default function RefreeDirectorProfile() {
                                     <Button className="profile-card-body-button" variant="primary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage My Profile</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Edit/change your Profile, update contact Information, register as a host coach</label>
+                                    <label>Edit/change your Profile, update contact Information</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
