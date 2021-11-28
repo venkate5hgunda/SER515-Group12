@@ -1,6 +1,4 @@
 import React from 'react';
-import Logout from '../../pages/Login/Logout';
-import { useCookies } from 'react-cookie';
 // import './Navbar.css';
 import {GiSoccerBall} from "react-icons/gi";
 import {
@@ -11,15 +9,16 @@ import {
 } from 'react-bootstrap';
 import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
+import Logout from '../../pages/Login/Logout';
+import { useCookies } from 'react-cookie';
 
-
-function Navbar() {
+function Navbar({toggleDrawer}) {
   return (
-    <ReactNavbar />
+    <ReactNavbar toggleDrawer={toggleDrawer} />
   )
 }
 
-function ReactNavbar() {
+function ReactNavbar({toggleDrawer}) {
   const [cookies] = useCookies(['user']);
   console.log(cookies["username"]);
   console.log(cookies["rolename"] === "tournament-director");
@@ -50,6 +49,7 @@ function ReactNavbar() {
             <Nav.Link href="/application-forms">Apply</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
             {cookies["rolename"] === "tournament-director" ? <Nav.Link href="/display-result">Edit Result</Nav.Link>: ""}
+            <Nav.Link onClick={()=>toggleDrawer(true)}> Menu </Nav.Link>
             <TokenGenerator />
             <Logout />
           </Nav>
