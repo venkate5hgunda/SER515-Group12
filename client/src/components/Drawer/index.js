@@ -64,7 +64,7 @@ export default function TemporaryDrawer({open, close}) {
                             <MenuItem value={20}>Twenty</MenuItem>
                             <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
-                        </FormControl>a
+                        </FormControl>
                 </Box>
             <ListItem style={{display:"flex",justifyContent:"center"}}>
                 <Button variant="outlined">See Teams</Button>
@@ -80,7 +80,6 @@ export default function TemporaryDrawer({open, close}) {
                     <ListItemText primary={item} />
                 </ListItem>
             ))}
-            a
             </List>
 
       </List>
