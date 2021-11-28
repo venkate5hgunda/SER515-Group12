@@ -83,10 +83,10 @@ export default function RefreeDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                    <Button className="profile-card-body-button" variant="info" style={listGroupButtonStyle} onClick={handlePopUpOpen}>View/Manage Matches</Button>
+                                    <Button className="profile-card-body-button" variant="info" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Assign Referee's</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>You can view your past matches with their results, request a reshchedule of an upcoming match, and view the reschedule requests status</label>
+                                    <label>Assigning Referee's to each match</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
