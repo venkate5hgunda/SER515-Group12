@@ -73,10 +73,10 @@ export default function RefreeDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Team/Players</Button>
+                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Referee's</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Add/Edit the players of team, change the starting XI, manage bench warmers, maintain player stats</label>
+                                    <label>Add/Edit the Referee's and maintain player stats</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -93,7 +93,7 @@ export default function RefreeDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Raise/Appeal/View Game Decisions</Button>
+                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>View Appeal/Game Decisions</Button>
                                 </Col>
                                 <Col md={9}>
                                     <label>Raise an Appeal if unsatisfied with a referee decision during the game, manage those appeals, and view the status of the appeals</label>
@@ -103,20 +103,20 @@ export default function RefreeDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Withdraw from Tournament</Button>
+                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>View Referee Request</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Due to unforeseen circumstances, if you need one of your teams to drop out of tournament, fill this form to initiate the process</label>
+                                    <label>The request from all the referee's can be view/approve</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Team/Tournament Director</Button>
+                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Tournament Director</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Team Directior and can be escalated to Tournament Director</label>
+                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Tournament Director</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
