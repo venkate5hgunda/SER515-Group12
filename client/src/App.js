@@ -20,6 +20,11 @@ import TeamRegistration from './pages/team-registration/team-registration';
 import ApplicationForms from './pages/ApplicationForms/application-forms';
 import Team from './pages/Team/team'
 import Drawer from './components/Drawer'
+import Result from './pages/Result/Result';
+import TeamDirectorProfile from './components/team-director/team-director';
+import TournamentDirectorProfile from './components/tournament-director/tournament-director';
+import RefreeDirectorProfile from './components/referee-director/referee-director';
+import RefereeProfile from './components/referee/referee';
 
 // TODO: Auto Build React when Node Starts
 function App() {
@@ -44,7 +49,12 @@ function App() {
               <Route path='/login' exact component={Login}/>
               <Route path='/referee-registration' exact component={Referee} />
               <Route path='/coach-profile' exact component={CoachProfile} />
-              <Route path='/teams' exact component={Team} />
+              <Route path='/teams' exact component={Team} /> 
+              <Route path='/display-result' exact component={Result} />
+              <Route path='/team-director-profile' exact component={TeamDirectorProfile} />
+              <Route path='/tournament-director-profile' exact component={TournamentDirectorProfile} />
+              <Route path='/referee-director-profile' exact component={RefreeDirectorProfile} />
+              <Route path='/referee-profile' exact component={RefereeProfile} />
             </Switch>
           </div>
         <Footer />
