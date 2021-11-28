@@ -70,7 +70,7 @@ export default function TemporaryDrawer({open, close}) {
                 <Button variant="outlined">See Teams</Button>
             </ListItem>
             <Divider />
-            {/* <ListItem>
+            <ListItem>
                 <ListItemText primary={"FAST FIND"} />
             </ListItem>
             <Divider />
@@ -81,7 +81,7 @@ export default function TemporaryDrawer({open, close}) {
                 </ListItem>
             ))}
             a
-            </List> */}
+            </List>
 
       </List>
     </Box>
