@@ -73,10 +73,10 @@ export default function TournamentDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Team/Players</Button>
+                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Team Director/Field Dorector/Referee Director</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Add/Edit the players of team, change the starting XI, manage bench warmers, maintain player stats</label>
+                                    <label>Add/Edit Team Director/Field Dorector/Referee Director</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -86,37 +86,37 @@ export default function TournamentDirectorProfile() {
                                     <Button className="profile-card-body-button" variant="info" style={listGroupButtonStyle} onClick={handlePopUpOpen}>View/Manage Matches</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>You can view your past matches with their results, request a reshchedule of an upcoming match, and view the reschedule requests status</label>
+                                    <label>You can view your past matches with their results, and view the reschedule requests status</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Raise/Appeal/View Game Decisions</Button>
+                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Post Updates</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Raise an Appeal if unsatisfied with a referee decision during the game, manage those appeals, and view the status of the appeals</label>
+                                    <label>Post high priority updates</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Withdraw from Tournament</Button>
+                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Removal of Team from Tournament</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Due to unforeseen circumstances, if you need one of your teams to drop out of tournament, fill this form to initiate the process</label>
+                                    <label>Due to unforeseen circumstances, teams can be eliminated from the tournament</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Team/Tournament Director</Button>
+                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Admin</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Team Directior and can be escalated to Tournament Director</label>
+                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Admin</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>

@@ -113,10 +113,10 @@ export default function TeamDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Team/Tournament Director</Button>
+                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Coach</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Team Directior and can be escalated to Tournament Director</label>
+                                    <label>Add/Edit the Coach of team and maintain coach stats</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
