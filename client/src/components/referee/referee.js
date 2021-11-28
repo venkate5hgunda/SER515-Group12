@@ -66,17 +66,17 @@ export default function RefereeProfile() {
                                     <Button className="profile-card-body-button" variant="primary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage My Profile</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Edit/change your Profile, update contact Information, register as a host coach</label>
+                                    <label>Edit/change your Profile, update contact Information</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Team/Players</Button>
+                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Upcoming Schedule</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Add/Edit the players of team, change the starting XI, manage bench warmers, maintain player stats</label>
+                                    <label>Update all the future availabilty for the upcoming matches</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -93,10 +93,10 @@ export default function RefereeProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Raise/Appeal/View Game Decisions</Button>
+                                <Button className="profile-card-body-button" variant="warning" style={listGroupButtonStyle} onClick={handlePopUpOpen}>View/Approve Game Appeal</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Raise an Appeal if unsatisfied with a referee decision during the game, manage those appeals, and view the status of the appeals</label>
+                                    <label>View/Approve all the appeal raise by Coach</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -106,17 +106,17 @@ export default function RefereeProfile() {
                                 <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Withdraw from Tournament</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Due to unforeseen circumstances, if you need one of your teams to drop out of tournament, fill this form to initiate the process</label>
+                                    <label>Due to unforeseen circumstances, if you need to be out of tournament, fill this form to initiate the process</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Team/Tournament Director</Button>
+                                <Button className="profile-card-body-button" variant="success" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Contact Referee Director</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Team Directior and can be escalated to Tournament Director</label>
+                                    <label>For any misc. queries/questions, fill this query form which will be reviewed by Referee Director</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>

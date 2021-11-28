@@ -66,14 +66,14 @@ export default function TournamentDirectorProfile() {
                                     <Button className="profile-card-body-button" variant="primary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage My Profile</Button>
                                 </Col>
                                 <Col md={9}>
-                                    <label>Edit/change your Profile, update contact Information, register as a host coach</label>
+                                    <label>Edit/change your Profile, update contact Information</label>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage Team Director/Field Dorector/Referee Director</Button>
+                                    <Button className="profile-card-body-button" variant="secondary" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Manage All Directors</Button>
                                 </Col>
                                 <Col md={9}>
                                     <label>Add/Edit Team Director/Field Dorector/Referee Director</label>
@@ -103,7 +103,7 @@ export default function TournamentDirectorProfile() {
                         <ListGroup.Item>
                             <Row>
                                 <Col md={3}>
-                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Removal of Team from Tournament</Button>
+                                <Button className="profile-card-body-button" variant="danger" style={listGroupButtonStyle} onClick={handlePopUpOpen}>Disqualify Team </Button>
                                 </Col>
                                 <Col md={9}>
                                     <label>Due to unforeseen circumstances, teams can be eliminated from the tournament</label>
