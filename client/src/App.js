@@ -21,6 +21,7 @@ import ApplicationForms from './pages/ApplicationForms/application-forms';
 import Result from './pages/Result/Result';
 import TeamDirectorProfile from './components/team-director/team-director';
 import TournamentDirectorProfile from './components/tournament-director/tournament-director';
+import RefreeDirectorProfile from './components/referee-director/referee-director';
 
 // TODO: Auto Build React when Node Starts
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path='/display-result' exact component={Result} />
               <Route path='/team-director-profile' exact component={TeamDirectorProfile} />
               <Route path='/tournament-director-profile' exact component={TournamentDirectorProfile} />
+              <Route path='/referee-director-profile' exact component={RefreeDirectorProfile} />
             </Switch>
           </div>
         <Footer />
