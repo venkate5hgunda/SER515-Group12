@@ -52,7 +52,7 @@ export default function TemporaryDrawer({open, close}) {
                 <Button variant="outlined">See Games</Button>
             </ListItem>
             <Divider />
-                {/* <Box sx={{ minWidth: 120, margin:2 }}>
+                <Box sx={{ minWidth: 120, margin:2 }}>
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">2021 Teams</InputLabel>
                             <Select
@@ -70,7 +70,7 @@ export default function TemporaryDrawer({open, close}) {
                 <Button variant="outlined">See Teams</Button>
             </ListItem>
             <Divider />
-            <ListItem>
+            {/* <ListItem>
                 <ListItemText primary={"FAST FIND"} />
             </ListItem>
             <Divider />
