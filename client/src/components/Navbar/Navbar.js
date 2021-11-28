@@ -44,6 +44,7 @@ function ReactNavbar({toggleDrawer}) {
             <Nav.Link href="/Rules and Regulations"> Rules </Nav.Link>
             <Nav.Link href="/application-forms">Apply</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
+            {cookies["rolename"] === "tournament-director" ? <Nav.Link href="/display-result">Edit Result</Nav.Link>: ""}
             <Nav.Link onClick={()=>toggleDrawer(true)}> Menu </Nav.Link>
             <TokenGenerator />
             <Logout />
