@@ -49,7 +49,7 @@ function App() {
               <Route path='/login' exact component={Login}/>
               <Route path='/referee-registration' exact component={Referee} />
               <Route path='/coach-profile' exact component={CoachProfile} />
-              <Route path='/teams' exact component={Team} /> 
+              <Route path='/search-games' exact component={Team} /> 
               <Route path='/display-result' exact component={Result} />
               <Route path='/team-director-profile' exact component={TeamDirectorProfile} />
               <Route path='/tournament-director-profile' exact component={TournamentDirectorProfile} />

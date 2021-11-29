@@ -1,6 +1,7 @@
 import React from 'react';
 // import './Navbar.css';
-import {GiSoccerBall} from "react-icons/gi";
+import { GiSoccerBall } from "react-icons/gi";
+import { FaBars } from "react-icons/fa";
 import {
   Navbar as BootstrapNavbar,
   Container,
@@ -41,7 +42,7 @@ function ReactNavbar({toggleDrawer}) {
           <Nav className="mr-auto">
             <Nav.Link href="/"> Home </Nav.Link>
             <Nav.Link href="/about"> About </Nav.Link>
-            <Nav.Link href="/teams"> Teams </Nav.Link>
+            <Nav.Link href="/search-games"> Search </Nav.Link>
             <Nav.Link href="/schedule"> Schedule </Nav.Link>
             <Nav.Link href="/display-result"> Results </Nav.Link>
             <Nav.Link href="/hotels"> Hotels </Nav.Link>
@@ -50,7 +51,7 @@ function ReactNavbar({toggleDrawer}) {
             <Nav.Link href="/application-forms">Apply</Nav.Link>
             <Nav.Link href="/sponsors"> Sponsors </Nav.Link>
             {/* {cookies["rolename"] === "tournament-director" ? <Nav.Link href="/display-result">Edit Result</Nav.Link>: ""} */}
-            <Nav.Link onClick={()=>toggleDrawer(true)}> Menu </Nav.Link>
+            <Nav.Link onClick={()=>toggleDrawer(true)}> Menu < FaBars style={{"color": "rgba(255,255,255,.55)"}} size = '1rem' /> </Nav.Link>
             <TokenGenerator />
             <Logout />
           </Nav>
