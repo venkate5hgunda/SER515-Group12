@@ -1,10 +1,12 @@
 import React from 'react';
-import {Button} from '../Button/Button'
+import { Button } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useState } from 'react';
+import { Modal, Image } from 'react-bootstrap';
 
 var boysDivisions = {
     1: "Boys U08 DOB2014 7 v7",
@@ -79,10 +81,21 @@ function ScheduleSection() {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+
+    const [showUnderConstruction, setShowUnderConstruction] = useState(false);
+
+    const handlePopUpOpen = () => {
+        setShowUnderConstruction(true);
+    }
+
+    const handlePopUpClose = () => {
+        setShowUnderConstruction(false);
+    }
+
   return (
     <div className='category-container hotel-container'>
         <div className="faq-title category-title ">
-            2021 Game Schedule
+            2021 Tournament Games
         </div>
         <div className="hotel-text" style={{textAlign:"center"}}>
             {/* <p>Select one of the following searches to find your team's games.
@@ -150,6 +163,32 @@ function ScheduleSection() {
                         </Select>
                     </FormControl>
                 </Box>
+                <div className="d-grid gap-2">
+                    <Button variant="primary" style={{"margin": "16px"}} onClick={handlePopUpOpen}>
+                        SEARCH
+                    </Button>
+                </div>
+                <Modal show={showUnderConstruction} onHide={handlePopUpClose} backdrop="static" keyboard={false}>
+                    <style type="text/css">
+                        {`
+                            .coming-soon-popup-text {
+                                text-align: center;
+                                background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+                                color: transparent;
+                                font-size: 50px;
+                            }
+                        `}
+                    </style>
+                    <Modal.Header closeButton>
+                        <Modal.Title>This feature is under construction...</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Image src="https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_960_720.png" fluid />
+                        <p> </p>
+                        <p> </p>
+                        <h5 className="coming-soon-popup-text">Coming Soon !!!</h5>
+                    </Modal.Body>
+                </Modal>
                 
         </div> 
         {/* <div className="hotel-button"><Button buttonStyle='btn--outline-new'>See Games</Button></div> */}
