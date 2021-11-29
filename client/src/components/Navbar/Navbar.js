@@ -10,14 +10,18 @@ import {
 import TokenGenerator from '../../components/token-generator/token-generator';
 import { IconContext } from 'react-icons/lib';
 import Logout from '../../pages/Login/Logout';
+import { useCookies } from 'react-cookie';
 
-function Navbar() {
+function Navbar({toggleDrawer}) {
   return (
-    <ReactNavbar />
+    <ReactNavbar toggleDrawer={toggleDrawer} />
   )
 }
 
-function ReactNavbar() {
+function ReactNavbar({toggleDrawer}) {
+  const [cookies] = useCookies(['user']);
+  console.log(cookies["username"]);
+  console.log(cookies["rolename"] === "tournament-director");
   return (
     <>
       <style type="text/css">

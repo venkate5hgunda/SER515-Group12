@@ -15,7 +15,7 @@ function Videos () {
                   <Card className="sponsor-card">
                     <Card.Body className="sponsor-card-body">
                       <ReactPlayer
-                       url='https://www.youtube.com/watch?v=dg3EB-nRGzc'
+                       url='https://www.youtube.com/watch?v=GqUUIWb22ss&ab_channel=NBCSports'
                        width="170%"
                        controls={true}
                        muted={true}
@@ -33,7 +33,7 @@ function Videos () {
                   <Card className="sponsor-card">
                     <Card.Body className="sponsor-card-body">
                       <ReactPlayer
-                       url='https://www.youtube.com/watch?v=dcr9sCyu7jw'
+                       url='https://www.youtube.com/watch?v=DMINfWgE96c&ab_channel=CBSSportsGolazo'
                        width="170%"
                        controls={true}
                        muted={true}
@@ -52,7 +52,7 @@ function Videos () {
                   <Card className="sponsor-card">
                     <Card.Body className="sponsor-card-body">
                       <ReactPlayer
-                       url='https://www.youtube.com/watch?v=n239vyFURoI'
+                       url='https://www.youtube.com/watch?v=AtuzDz_0His&ab_channel=NBCSports'
                        width="170%"
                        controls={true}
                        muted={true}
@@ -70,7 +70,7 @@ function Videos () {
                   <Card className="sponsor-card">
                     <Card.Body className="sponsor-card-body">
                       <ReactPlayer
-                       url='https://www.youtube.com/watch?v=BUHlZq4vgyM'
+                       url='https://www.youtube.com/watch?v=Vvm4E3QxZCA&ab_channel=NBCSports'
                        width="170%"
                        controls={true}
                        muted={true}
