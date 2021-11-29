@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Table} from 'react-bootstrap';
+import {ButtonGroup, Table, ToggleButton} from 'react-bootstrap';
 import './Result.css';
 import Pagination from "./Pagination";
 import { useAuth } from "../../contexts/AuthContext"
@@ -49,7 +49,7 @@ const Schedule = () => {
     return (
         <div className={"main-schedule "+randomBackground}>
             <div className={"schedule-header"}>
-                <h2 className={"align-self-start table-heading"}>Results</h2>
+                <h2 className={"align-self-start table-heading"}>TOURNAMENT RESULTS TABLE</h2>
                 {/* {cookies["rolename"] === "tournament-director" ? <button className={"btn btn-primary schedule-edit"}>Edit Schedule</button> : '' } */}
             </div>
             <Table className={"table-schedule"} striped bordered hover variant="dark" size="lg">
@@ -57,7 +57,9 @@ const Schedule = () => {
                 <tr>
                     <th>Home Team</th>
                     <th>Visiting Team</th>
-                    <th>Referee</th>
+                    {(cookies["rolename"] == "tournament-director" || cookies["rolename"] == "field-director") ?
+                        <th>Who Won?</th> : ''
+                    }
                     <th>Start Time</th>
                     <th>End Time</th>
                     <th>Results</th>
@@ -70,10 +72,17 @@ const Schedule = () => {
                                 <tr>
                                     <td>{e.homeTeam.name}</td>
                                     <td>{e.visitingTeam.name}</td>
-                                    <td>{e.referee.name}</td>
+                                    {(cookies["rolename"] == "tournament-director" || cookies["rolename"] == "field-director") ?
+                                        <td>
+                                            <ButtonGroup style={{"width": "200px"}}>
+                                                <ToggleButton type="radio" style={{ "width": "100px" }} variant="outline-info" checked={cookies["game-" + e.homeTeam.name + e.visitingTeam.name] === e.homeTeam.name} onClick={() => { setCookie("game-" + e.homeTeam.name + e.visitingTeam.name, e.homeTeam.name); window.location.reload(false); }}>{e.homeTeam.name.split(' ')[1]}</ToggleButton>
+                                                <ToggleButton type="radio" style={{ "width": "100px" }} variant="outline-info" checked={cookies["game-" + e.homeTeam.name + e.visitingTeam.name] === e.visitingTeam.name} onClick={() => { setCookie("game-" + e.homeTeam.name + e.visitingTeam.name, e.visitingTeam.name); window.location.reload(false); }}>{e.visitingTeam.name.split(' ')[1]}</ToggleButton>
+                                            </ButtonGroup>
+                                        </td> : ''
+                                    }
                                     <td>{(e.schedule.start)}</td>
                                     <td>{(e.schedule.end)}</td>
-                                    {true  ? <td><input type={"text"}></input></td> :<td>{e.field.name}</td>}
+                                    <td>{cookies["game-"+e.homeTeam.name+e.visitingTeam.name]==null ? "Unannounced" : cookies["game-"+e.homeTeam.name+e.visitingTeam.name].split(' ')[1]+" Won !!!"}</td>
                                 </tr>
                             )
                             })

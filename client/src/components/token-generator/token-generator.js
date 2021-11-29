@@ -107,7 +107,7 @@ function TokenGenForm(role) {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="form.rolename">
                             <Form.Label>Role</Form.Label>
-                            <GetRolesDropdown currRole={role.role} />
+                            <GetRolesDropdown currRole={cookies["rolename"]} />
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Generate Token
