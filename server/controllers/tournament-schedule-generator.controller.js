@@ -95,6 +95,7 @@ function getTimeSlots(length) {
         let timeSlot = new scheduleModel();
         timeSlot.start = startTime.format('MMM Do, h:mm A');
         timeSlot.end = startTime.add(90, "minute").format('MMM Do, h:mm A');
+        startTime.add(30, "minute");
         timeslots.push(timeSlot);
     }
     return timeslots;

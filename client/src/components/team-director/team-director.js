@@ -29,7 +29,7 @@ export default function TeamDirectorProfile() {
         setShowUnderConstruction(false);
     }
 
-    if(cookies["rolename"] === "team-director") {
+    if(cookies["username"] && cookies["rolename"] === "team-director") {
         return (
             <>
                 <style type="text/css">
@@ -165,7 +165,7 @@ export default function TeamDirectorProfile() {
                 </style>
                 <Card className="profile-card">
                     <Card.Body className="profile-card-body">
-                        <h4>Hello, you're not logged in. Please login to view your profile. Go to <a href='/login'>Login Page</a> from here.</h4>
+                        <h4>Hello, you're not logged in, or you're logged in as a different user. Please login to view your profile. Go to <a href='/login'>Login Page</a> from here.</h4>
                     </Card.Body>
                 </Card>
                 <Card className="profile-card">
