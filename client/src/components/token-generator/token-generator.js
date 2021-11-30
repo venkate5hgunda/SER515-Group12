@@ -127,7 +127,8 @@ function TokenGenForm(role) {
 
 function GetRolesDropdown(currRole) { // TODO: Need to add logic to dynamically fetch the roles list that current user can invite
     // let validRoles = ["coach", "team-director", "referee", "referee-director", "field-manager", "field-director", "tournament-director", "admin"];
-    switch(currRole.currRole) {
+    
+    switch (currRole.currRole) {
         case "team-director":
             return (
                 <Form.Select aria-label="Choose a Role">
